@@ -11091,11 +11091,11 @@ We've spent an enormous amount of time creating and checking these footprints an
 </classes>
 <parts>
 <part name="ACC+GYRO" library="sensors-akc_zyr" deviceset="LSM330DLC" device=""/>
-<part name="C1" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="C2" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="C1" library="resistor" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C2" library="resistor" deviceset="C-EU" device="C0805" value="10n"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
-<part name="C3" library="rcl" deviceset="CPOL-EU" device="SMCA"/>
+<part name="C3" library="rcl" deviceset="CPOL-EU" device="SMCA" value="10u"/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>

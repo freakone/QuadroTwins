@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.3">
+<eagle version="6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -6272,7 +6272,7 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 </class>
 </classes>
 <parts>
-<part name="U$1" library="etrx357_logical" deviceset="ETRX357*" device="" technology="HR"/>
+<part name="ETRX357" library="etrx357_logical" deviceset="ETRX357*" device="" technology="HR"/>
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="C1" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
@@ -6292,7 +6292,7 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <plain>
 </plain>
 <instances>
-<instance part="U$1" gate="G$1" x="33.02" y="66.04"/>
+<instance part="ETRX357" gate="G$1" x="33.02" y="66.04"/>
 <instance part="GND1" gate="1" x="53.34" y="40.64"/>
 <instance part="SUPPLY1" gate="G$1" x="66.04" y="78.74"/>
 <instance part="C1" gate="G$1" x="66.04" y="76.2"/>
@@ -6312,36 +6312,36 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <nets>
 <net name="TXD" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="PB1"/>
+<pinref part="ETRX357" gate="G$1" pin="PB1"/>
 <wire x1="10.16" y1="55.88" x2="5.08" y2="55.88" width="0.1524" layer="91"/>
 <label x="0" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RXD" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="PB2"/>
+<pinref part="ETRX357" gate="G$1" pin="PB2"/>
 <wire x1="10.16" y1="53.34" x2="5.08" y2="53.34" width="0.1524" layer="91"/>
 <label x="0" y="53.34" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND@6"/>
+<pinref part="ETRX357" gate="G$1" pin="GND@6"/>
 <wire x1="53.34" y1="60.96" x2="53.34" y2="58.42" width="0.1524" layer="91"/>
 <junction x="53.34" y="60.96"/>
-<pinref part="U$1" gate="G$1" pin="GND@5"/>
+<pinref part="ETRX357" gate="G$1" pin="GND@5"/>
 <junction x="53.34" y="58.42"/>
 <wire x1="53.34" y1="58.42" x2="53.34" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="GND@4"/>
+<pinref part="ETRX357" gate="G$1" pin="GND@4"/>
 <junction x="53.34" y="55.88"/>
 <wire x1="53.34" y1="55.88" x2="53.34" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="GND@3"/>
+<pinref part="ETRX357" gate="G$1" pin="GND@3"/>
 <junction x="53.34" y="53.34"/>
 <wire x1="53.34" y1="53.34" x2="53.34" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="GND@2"/>
+<pinref part="ETRX357" gate="G$1" pin="GND@2"/>
 <junction x="53.34" y="50.8"/>
 <wire x1="53.34" y1="50.8" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="GND@1"/>
+<pinref part="ETRX357" gate="G$1" pin="GND@1"/>
 <junction x="53.34" y="48.26"/>
 <wire x1="53.34" y1="48.26" x2="53.34" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
@@ -6368,7 +6368,7 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 </net>
 <net name="3.3V" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="VCC"/>
+<pinref part="ETRX357" gate="G$1" pin="VCC"/>
 <wire x1="53.34" y1="78.74" x2="66.04" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="SUPPLY1" gate="G$1" pin="3.3V"/>
 <pinref part="C1" gate="G$1" pin="1"/>
@@ -6377,7 +6377,7 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="PC6"/>
+<pinref part="ETRX357" gate="G$1" pin="PC6"/>
 <wire x1="10.16" y1="22.86" x2="5.08" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="22.86" x2="5.08" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="LED1" gate="G$1" pin="A"/>
@@ -6385,14 +6385,14 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="PC7"/>
+<pinref part="ETRX357" gate="G$1" pin="PC7"/>
 <wire x1="10.16" y1="20.32" x2="2.54" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="LED2" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="PB7"/>
+<pinref part="ETRX357" gate="G$1" pin="PB7"/>
 <pinref part="LED3" gate="G$1" pin="A"/>
 </segment>
 </net>

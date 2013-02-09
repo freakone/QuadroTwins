@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.3">
+<eagle version="6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -11090,12 +11090,12 @@ We've spent an enormous amount of time creating and checking these footprints an
 </class>
 </classes>
 <parts>
-<part name="ACC+GYRO" library="sensors-akc_zyr" deviceset="LSM330DLC" device=""/>
-<part name="C1" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="C2" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="LSM330DLC" library="sensors-akc_zyr" deviceset="LSM330DLC" device=""/>
+<part name="C1" library="resistor" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C2" library="resistor" deviceset="C-EU" device="C0805" value="10n"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
-<part name="C3" library="rcl" deviceset="CPOL-EU" device="SMCA"/>
+<part name="C3" library="rcl" deviceset="CPOL-EU" device="SMCA" value="10u"/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
@@ -11106,7 +11106,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <plain>
 </plain>
 <instances>
-<instance part="ACC+GYRO" gate="G$1" x="43.18" y="116.84"/>
+<instance part="LSM330DLC" gate="G$1" x="43.18" y="116.84"/>
 <instance part="C1" gate="G$1" x="22.86" y="127" rot="R180"/>
 <instance part="C2" gate="G$1" x="33.02" y="142.24" rot="R270"/>
 <instance part="GND1" gate="1" x="22.86" y="139.7"/>
@@ -11122,14 +11122,14 @@ We've spent an enormous amount of time creating and checking these footprints an
 <nets>
 <net name="N$1" class="0">
 <segment>
-<pinref part="ACC+GYRO" gate="G$1" pin="CAP"/>
+<pinref part="LSM330DLC" gate="G$1" pin="CAP"/>
 <pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="35.56" y1="142.24" x2="38.1" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="ACC+GYRO" gate="G$1" pin="VSS"/>
+<pinref part="LSM330DLC" gate="G$1" pin="VSS"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <pinref part="C3" gate="G$1" pin="-"/>
 <pinref part="C1" gate="G$1" pin="1"/>
@@ -11145,23 +11145,23 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="27.94" y1="142.24" x2="22.86" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="ACC+GYRO" gate="G$1" pin="SDO_A"/>
-<pinref part="ACC+GYRO" gate="G$1" pin="SDO_G"/>
+<pinref part="LSM330DLC" gate="G$1" pin="SDO_A"/>
+<pinref part="LSM330DLC" gate="G$1" pin="SDO_G"/>
 <wire x1="38.1" y1="157.48" x2="38.1" y2="162.56" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="162.56" x2="22.86" y2="162.56" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <junction x="38.1" y="162.56"/>
 </segment>
 <segment>
-<pinref part="ACC+GYRO" gate="G$1" pin="DEN_G"/>
+<pinref part="LSM330DLC" gate="G$1" pin="DEN_G"/>
 <pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="81.28" y1="162.56" x2="91.44" y2="162.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="3.3V" class="0">
 <segment>
-<pinref part="ACC+GYRO" gate="G$1" pin="VDD"/>
-<pinref part="ACC+GYRO" gate="G$1" pin="VDD_IO"/>
+<pinref part="LSM330DLC" gate="G$1" pin="VDD"/>
+<pinref part="LSM330DLC" gate="G$1" pin="VDD_IO"/>
 <wire x1="38.1" y1="127" x2="38.1" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="2"/>
 <wire x1="22.86" y1="132.08" x2="27.94" y2="132.08" width="0.1524" layer="91"/>
@@ -11174,8 +11174,8 @@ We've spent an enormous amount of time creating and checking these footprints an
 <junction x="22.86" y="132.08"/>
 </segment>
 <segment>
-<pinref part="ACC+GYRO" gate="G$1" pin="!CS_A"/>
-<pinref part="ACC+GYRO" gate="G$1" pin="!CS_G"/>
+<pinref part="LSM330DLC" gate="G$1" pin="!CS_A"/>
+<pinref part="LSM330DLC" gate="G$1" pin="!CS_G"/>
 <wire x1="38.1" y1="172.72" x2="38.1" y2="177.8" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="177.8" x2="20.32" y2="177.8" width="0.1524" layer="91"/>
 <pinref part="SUPPLY2" gate="G$1" pin="3.3V"/>
@@ -11184,28 +11184,28 @@ We've spent an enormous amount of time creating and checking these footprints an
 </net>
 <net name="SCL" class="0">
 <segment>
-<pinref part="ACC+GYRO" gate="G$1" pin="SCL"/>
+<pinref part="LSM330DLC" gate="G$1" pin="SCL"/>
 <wire x1="38.1" y1="167.64" x2="30.48" y2="167.64" width="0.1524" layer="91"/>
 <label x="25.4" y="167.64" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SDA" class="0">
 <segment>
-<pinref part="ACC+GYRO" gate="G$1" pin="SDA"/>
+<pinref part="LSM330DLC" gate="G$1" pin="SDA"/>
 <wire x1="38.1" y1="152.4" x2="30.48" y2="152.4" width="0.1524" layer="91"/>
 <label x="25.4" y="152.4" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="INT_ACC" class="0">
 <segment>
-<pinref part="ACC+GYRO" gate="G$1" pin="INT1_A"/>
+<pinref part="LSM330DLC" gate="G$1" pin="INT1_A"/>
 <wire x1="81.28" y1="172.72" x2="86.36" y2="172.72" width="0.1524" layer="91"/>
 <label x="86.36" y="172.72" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="INT_GYRO" class="0">
 <segment>
-<pinref part="ACC+GYRO" gate="G$1" pin="INT1_G"/>
+<pinref part="LSM330DLC" gate="G$1" pin="INT1_G"/>
 <wire x1="81.28" y1="152.4" x2="86.36" y2="152.4" width="0.1524" layer="91"/>
 <label x="86.36" y="152.4" size="1.778" layer="95"/>
 </segment>

@@ -12410,7 +12410,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="111.76" y1="0" x2="111.76" y2="38.1" width="0.1524" layer="95" style="shortdash"/>
 <wire x1="111.76" y1="38.1" x2="0" y2="38.1" width="0.1524" layer="95" style="shortdash"/>
 <wire x1="0" y1="38.1" x2="0" y2="0" width="0.1524" layer="95" style="shortdash"/>
-<text x="2.54" y="2.54" size="5.08" layer="95">MAG3110 Magnetometer</text>
+<text x="2.54" y="2.54" size="3.81" layer="95">MAG3110 Magnetometer</text>
 </plain>
 <instances>
 <instance part="MAG3110" gate="G$1" x="40.64" y="22.86"/>

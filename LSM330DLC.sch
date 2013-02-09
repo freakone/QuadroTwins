@@ -11104,18 +11104,23 @@ We've spent an enormous amount of time creating and checking these footprints an
 <sheets>
 <sheet>
 <plain>
+<wire x1="2.54" y1="193.04" x2="104.14" y2="193.04" width="0.1524" layer="95" style="shortdash"/>
+<wire x1="104.14" y1="193.04" x2="104.14" y2="109.22" width="0.1524" layer="95" style="shortdash"/>
+<wire x1="104.14" y1="109.22" x2="2.54" y2="109.22" width="0.1524" layer="95" style="shortdash"/>
+<wire x1="2.54" y1="109.22" x2="2.54" y2="193.04" width="0.1524" layer="95" style="shortdash"/>
+<text x="5.08" y="111.76" size="3.81" layer="95">LSM330DLC Accelerometer + Gyroscope</text>
 </plain>
 <instances>
-<instance part="LSM330DLC" gate="G$1" x="43.18" y="116.84"/>
-<instance part="C1" gate="G$1" x="22.86" y="127" rot="R180"/>
-<instance part="C2" gate="G$1" x="33.02" y="142.24" rot="R270"/>
-<instance part="GND1" gate="1" x="22.86" y="139.7"/>
-<instance part="GND2" gate="1" x="22.86" y="119.38"/>
-<instance part="C3" gate="G$1" x="27.94" y="129.54"/>
-<instance part="SUPPLY1" gate="G$1" x="15.24" y="132.08"/>
-<instance part="SUPPLY2" gate="G$1" x="20.32" y="177.8"/>
-<instance part="GND3" gate="1" x="22.86" y="160.02"/>
-<instance part="GND4" gate="1" x="91.44" y="160.02"/>
+<instance part="LSM330DLC" gate="G$1" x="38.1" y="119.38"/>
+<instance part="C1" gate="G$1" x="20.32" y="129.54" rot="R180"/>
+<instance part="C2" gate="G$1" x="27.94" y="144.78" rot="R270"/>
+<instance part="GND1" gate="1" x="17.78" y="142.24"/>
+<instance part="GND2" gate="1" x="20.32" y="121.92"/>
+<instance part="C3" gate="G$1" x="25.4" y="132.08"/>
+<instance part="SUPPLY1" gate="G$1" x="10.16" y="134.62"/>
+<instance part="SUPPLY2" gate="G$1" x="25.4" y="180.34"/>
+<instance part="GND3" gate="1" x="25.4" y="162.56"/>
+<instance part="GND4" gate="1" x="86.36" y="162.56"/>
 </instances>
 <busses>
 </busses>
@@ -11124,7 +11129,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <segment>
 <pinref part="LSM330DLC" gate="G$1" pin="CAP"/>
 <pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="35.56" y1="142.24" x2="38.1" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="144.78" x2="33.02" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -11133,81 +11138,81 @@ We've spent an enormous amount of time creating and checking these footprints an
 <pinref part="GND2" gate="1" pin="GND"/>
 <pinref part="C3" gate="G$1" pin="-"/>
 <pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="27.94" y1="124.46" x2="22.86" y2="124.46" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="124.46" x2="22.86" y2="121.92" width="0.1524" layer="91"/>
-<junction x="22.86" y="124.46"/>
-<junction x="22.86" y="121.92"/>
-<wire x1="22.86" y1="121.92" x2="38.1" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="127" x2="20.32" y2="127" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="127" x2="20.32" y2="124.46" width="0.1524" layer="91"/>
+<junction x="20.32" y="127"/>
+<junction x="20.32" y="124.46"/>
+<wire x1="20.32" y1="124.46" x2="33.02" y2="124.46" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C2" gate="G$1" pin="2"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="27.94" y1="142.24" x2="22.86" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="144.78" x2="17.78" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="LSM330DLC" gate="G$1" pin="SDO_A"/>
 <pinref part="LSM330DLC" gate="G$1" pin="SDO_G"/>
-<wire x1="38.1" y1="157.48" x2="38.1" y2="162.56" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="162.56" x2="22.86" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="160.02" x2="33.02" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="165.1" x2="25.4" y2="165.1" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
-<junction x="38.1" y="162.56"/>
+<junction x="33.02" y="165.1"/>
 </segment>
 <segment>
 <pinref part="LSM330DLC" gate="G$1" pin="DEN_G"/>
 <pinref part="GND4" gate="1" pin="GND"/>
-<wire x1="81.28" y1="162.56" x2="91.44" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="165.1" x2="86.36" y2="165.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="3.3V" class="0">
 <segment>
 <pinref part="LSM330DLC" gate="G$1" pin="VDD"/>
 <pinref part="LSM330DLC" gate="G$1" pin="VDD_IO"/>
-<wire x1="38.1" y1="127" x2="38.1" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="129.54" x2="33.02" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="2"/>
-<wire x1="22.86" y1="132.08" x2="27.94" y2="132.08" width="0.1524" layer="91"/>
-<junction x="38.1" y="132.08"/>
+<wire x1="20.32" y1="134.62" x2="25.4" y2="134.62" width="0.1524" layer="91"/>
+<junction x="33.02" y="134.62"/>
 <pinref part="C3" gate="G$1" pin="+"/>
-<junction x="27.94" y="132.08"/>
-<wire x1="27.94" y1="132.08" x2="38.1" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="132.08" x2="15.24" y2="132.08" width="0.1524" layer="91"/>
+<junction x="25.4" y="134.62"/>
+<wire x1="25.4" y1="134.62" x2="33.02" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="134.62" x2="10.16" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="SUPPLY1" gate="G$1" pin="3.3V"/>
-<junction x="22.86" y="132.08"/>
+<junction x="20.32" y="134.62"/>
 </segment>
 <segment>
 <pinref part="LSM330DLC" gate="G$1" pin="!CS_A"/>
 <pinref part="LSM330DLC" gate="G$1" pin="!CS_G"/>
-<wire x1="38.1" y1="172.72" x2="38.1" y2="177.8" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="177.8" x2="20.32" y2="177.8" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="175.26" x2="33.02" y2="180.34" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="180.34" x2="25.4" y2="180.34" width="0.1524" layer="91"/>
 <pinref part="SUPPLY2" gate="G$1" pin="3.3V"/>
-<junction x="38.1" y="177.8"/>
+<junction x="33.02" y="180.34"/>
 </segment>
 </net>
 <net name="SCL" class="0">
 <segment>
 <pinref part="LSM330DLC" gate="G$1" pin="SCL"/>
-<wire x1="38.1" y1="167.64" x2="30.48" y2="167.64" width="0.1524" layer="91"/>
-<label x="25.4" y="167.64" size="1.778" layer="95"/>
+<wire x1="33.02" y1="170.18" x2="25.4" y2="170.18" width="0.1524" layer="91"/>
+<label x="20.32" y="170.18" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SDA" class="0">
 <segment>
 <pinref part="LSM330DLC" gate="G$1" pin="SDA"/>
-<wire x1="38.1" y1="152.4" x2="30.48" y2="152.4" width="0.1524" layer="91"/>
-<label x="25.4" y="152.4" size="1.778" layer="95"/>
+<wire x1="33.02" y1="154.94" x2="25.4" y2="154.94" width="0.1524" layer="91"/>
+<label x="20.32" y="154.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="INT_ACC" class="0">
 <segment>
 <pinref part="LSM330DLC" gate="G$1" pin="INT1_A"/>
-<wire x1="81.28" y1="172.72" x2="86.36" y2="172.72" width="0.1524" layer="91"/>
-<label x="86.36" y="172.72" size="1.778" layer="95"/>
+<wire x1="76.2" y1="175.26" x2="81.28" y2="175.26" width="0.1524" layer="91"/>
+<label x="81.28" y="175.26" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="INT_GYRO" class="0">
 <segment>
 <pinref part="LSM330DLC" gate="G$1" pin="INT1_G"/>
-<wire x1="81.28" y1="152.4" x2="86.36" y2="152.4" width="0.1524" layer="91"/>
-<label x="86.36" y="152.4" size="1.778" layer="95"/>
+<wire x1="76.2" y1="154.94" x2="81.28" y2="154.94" width="0.1524" layer="91"/>
+<label x="81.28" y="154.94" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

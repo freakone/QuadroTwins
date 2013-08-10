@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=Quadro.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\Quadro -TC:\CooCox\CoIDE\configuration\ProgramData\Quadro/arm-gcc-link.ld -g">
+      <target file="Quadro.elf" lastModified="1406859b955">
+         <source file="..\obj\core_cm3.o" lastModified="1406859b420"/>
+         <source file="..\obj\buzzer.o" lastModified="1406859b470"/>
+         <source file="..\obj\system_stm32f10x.o" lastModified="1406859b4bd"/>
+         <source file="..\obj\startup_stm32f10x_md.o" lastModified="1406859b4f0"/>
+         <source file="..\obj\main.o" lastModified="1406859b587"/>
+         <source file="..\obj\leds.o" lastModified="1406859b6a6"/>
+         <source file="..\obj\motors.o" lastModified="1406859b6fc"/>
+         <source file="..\obj\sensors.o" lastModified="1406859b772"/>
+      </target>
+   </processor>
+</history>

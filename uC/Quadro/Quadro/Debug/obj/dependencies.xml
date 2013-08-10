@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/I..\..\..\..\..\Users\ffrea_000\Desktop\arm_headers-1.0.0-120412 /I..\..\..\workspace /I..\..\..\workspace\Quadro\cmsis /I..\..\..\workspace\Quadro\cmsis_boot /I..\..\..\..\..\Users\ffrea_000\Desktop\arm_headers-1.0.0-120412\ARM_headers-1.0.0-120412\ARMv7-M(E) /I..\..\..\..\..\Users\ffrea_000\Desktop\arm_headers-1.0.0-120412\ARM_headers-1.0.0-120412 /I..\..\.. /I..\..\..\workspace\Quadro">
+      <source file="..\..\..\cmsis_boot\stm32f10x.h" lastModified="14058f99f88">
+         <include file="..\..\..\cmsis\core_cm3.h"/>
+         <include file="..\..\..\cmsis_boot\system_stm32f10x.h"/>
+         <include file="..\..\..\cmsis_boot\stm32f10x_conf.h"/>
+      </source>
+      <source file="..\..\..\leds.c" lastModified="1406335fccb">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\..\..\..\..\Users\ffrea_000\Desktop\arm_headers-1.0.0-120412\ARM_headers-1.0.0-120412\ARMv7-M(E)\hdr_bitband.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\..\Users\ffrea_000\Desktop\arm_headers-1.0.0-120412\ARM_headers-1.0.0-120412\ARMv7-M(E)\hdr_bitband.h" lastModified="136a755af53">
+      </source>
+      <source file="..\..\..\cmsis\core_cm3.h" lastModified="14058f97be1">
+      </source>
+      <source file="..\..\..\motors.h" lastModified="14059b38e04">
+      </source>
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="14058f99b9c">
+      </source>
+      <source file="..\..\..\cmsis\core_cm3.c" lastModified="14058f977f4">
+      </source>
+      <source file="..\..\..\cmsis_boot\stm32f10x_conf.h" lastModified="14058f99ba1">
+      </source>
+      <source file="..\..\..\motors.c" lastModified="140680dfb35">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+      </source>
+      <source file="..\..\..\sensors.h" lastModified="14062f4d654">
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f10x.h" lastModified="14058f99bb3">
+      </source>
+      <source file="..\..\..\sensors.c" lastModified="14062f5270a">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\sensors.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="14058f99bb3">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+      </source>
+      <source file="..\..\..\leds.h" lastModified="140598eb530">
+      </source>
+   </includePath>
+</dependencies>

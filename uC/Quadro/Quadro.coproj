@@ -69,6 +69,7 @@
   <Files>
     <File name="main.h" path="main.h" type="1"/>
     <File name="cmsis" path="" type="2"/>
+    <File name="lipo.c" path="lipo.c" type="1"/>
     <File name="cmsis_boot/system_stm32f10x.c" path="cmsis_boot/system_stm32f10x.c" type="1"/>
     <File name="cmsis/core_cm3.c" path="cmsis/core_cm3.c" type="1"/>
     <File name="leds.h" path="leds.h" type="1"/>
@@ -78,15 +79,16 @@
     <File name="cmsis_boot" path="" type="2"/>
     <File name="leds.c" path="leds.c" type="1"/>
     <File name="buzzer.c" path="buzzer.c" type="1"/>
+    <File name="lipo.h" path="lipo.h" type="1"/>
     <File name="sensors.c" path="sensors.c" type="1"/>
     <File name="motors.h" path="motors.h" type="1"/>
     <File name="sensors.h" path="sensors.h" type="1"/>
     <File name="cmsis_boot/startup" path="" type="2"/>
     <File name="cmsis_boot/startup/startup_stm32f10x_md.c" path="cmsis_boot/startup/startup_stm32f10x_md.c" type="1"/>
-    <File name="cmsis_boot/stm32f10x.h" path="cmsis_boot/stm32f10x.h" type="1"/>
     <File name="motors.c" path="motors.c" type="1"/>
-    <File name="cmsis_boot/stm32f10x_conf.h" path="cmsis_boot/stm32f10x_conf.h" type="1"/>
+    <File name="cmsis_boot/stm32f10x.h" path="cmsis_boot/stm32f10x.h" type="1"/>
     <File name="main.c" path="main.c" type="1"/>
+    <File name="cmsis_boot/stm32f10x_conf.h" path="cmsis_boot/stm32f10x_conf.h" type="1"/>
     <File name="hdr_bitband.h" path="hdr_bitband.h" type="1"/>
   </Files>
 </Project>

@@ -2,7 +2,8 @@
 #include "leds.h"
 #include "motors.h"
 #include "sensors.h"
-
+#include "lipo.h"
+#include "buzzer.h"
 #define BTN (GPIOC->IDR & GPIO_IDR_IDR13)
 
 int main(void)
@@ -13,11 +14,10 @@ int main(void)
 	motors_init();
 	sensors_init();
 	buzzer_init();
-	play_buzz(1000, 2, 1, 2);
+	lipo_init();
+/*	play_buzz(1000, 2, 1, 2);
 	wait_buzz();
-	play_buzz(500, 2, 1, 4);
-
-	uint8_t dane[1];
+	play_buzz(500, 2, 1, 4);*/
 
 	while(1)
 	{
@@ -27,8 +27,6 @@ int main(void)
 		}
 		else
 		{
-
-			play_buzz(0, 0, 0);
 
 		}
 	}
@@ -49,6 +47,7 @@ void clocks_init()
 
 	RCC->APB1ENR |= RCC_APB1ENR_TIM3EN | RCC_APB1ENR_I2C2EN | RCC_APB1ENR_TIM4EN | RCC_APB1ENR_USART2EN | RCC_APB1ENR_TIM2EN;
 	RCC->APB2ENR |= RCC_APB2ENR_IOPCEN | RCC_APB2ENR_ADC1EN | RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_SPI1EN | RCC_APB2ENR_TIM1EN;
+	RCC->AHBENR |= RCC_AHBENR_DMA1EN;
 }
 
 void gpio_init()
@@ -58,7 +57,7 @@ void gpio_init()
 			GPIO_CRL_MODE5 | GPIO_CRL_CNF5_1 | GPIO_CRL_MODE6 | GPIO_CRL_CNF6_1 | GPIO_CRL_MODE7 | GPIO_CRL_CNF7_1;
 
 
-	GPIOB->CRL &= ~(GPIO_CRL_CNF1 | GPIO_CRL_CNF6 | GPIO_CRL_CNF7 | GPIO_CRH_CNF8 | GPIO_CRH_CNF9 );
+	GPIOB->CRL &= ~(GPIO_CRL_CNF1 | GPIO_CRL_CNF6 | GPIO_CRL_CNF7 | GPIO_CRH_CNF8 | GPIO_CRH_CNF9 | GPIO_CRL_CNF0);
 	GPIOB->CRL |= GPIO_CRL_MODE1 | GPIO_CRL_CNF1_1 | GPIO_CRL_MODE6 | GPIO_CRL_CNF6_1 | GPIO_CRL_MODE7 | GPIO_CRL_CNF7_1;
 	GPIOB->CRH |= GPIO_CRH_MODE8 | GPIO_CRH_CNF8_1 | GPIO_CRH_MODE9 | GPIO_CRH_CNF9_1 | GPIO_CRH_MODE10 | GPIO_CRH_CNF10 | GPIO_CRH_MODE11 | GPIO_CRH_CNF11 |
 			GPIO_CRH_MODE12 | GPIO_CRH_MODE13 | GPIO_CRH_MODE14;

@@ -1,4 +1,9 @@
 
+Allocating common symbols
+Common symbol       size              file
+
+ADCVal              0x4               ..\obj\main.o
+
 Discarded input sections
 
  .text          0x00000000        0x0 ..\obj\core_cm3.o
@@ -58,6 +63,10 @@ Discarded input sections
  .debug_frame   0x00000000      0x280 ..\obj\core_cm3.o
  .text          0x00000000        0x0 ..\obj\buzzer.o
  .data          0x00000000        0x0 ..\obj\buzzer.o
+ .text.play_buzz
+                0x00000000      0x130 ..\obj\buzzer.o
+ .text.wait_buzz
+                0x00000000       0x20 ..\obj\buzzer.o
  .text          0x00000000        0x0 ..\obj\system_stm32f10x.o
  .data          0x00000000       0x14 ..\obj\system_stm32f10x.o
  .bss           0x00000000        0x0 ..\obj\system_stm32f10x.o
@@ -79,6 +88,9 @@ Discarded input sections
  .bss           0x00000000        0x0 ..\obj\sensors.o
  .text.i2c_read
                 0x00000000      0x1a0 ..\obj\sensors.o
+ .text          0x00000000        0x0 ..\obj\lipo.o
+ .data          0x00000000        0x0 ..\obj\lipo.o
+ .bss           0x00000000        0x0 ..\obj\lipo.o
 
 Memory Configuration
 
@@ -91,7 +103,7 @@ Linker script and memory map
 
                 0x20005000                _eram = 0x20005000
 
-.text           0x08000000      0xe08
+.text           0x08000000      0xd70
  *(.isr_vector .isr_vector.*)
  .isr_vector    0x08000000      0x10c ..\obj\startup_stm32f10x_md.o
                 0x08000000                g_pfnVectors
@@ -104,133 +116,130 @@ Linker script and memory map
  .text.TIM3_IRQHandler
                 0x080001b8      0x134 ..\obj\buzzer.o
                 0x080001b8                TIM3_IRQHandler
- .text.play_buzz
-                0x080002ec      0x130 ..\obj\buzzer.o
-                0x080002ec                play_buzz
- .text.wait_buzz
-                0x0800041c       0x20 ..\obj\buzzer.o
-                0x0800041c                wait_buzz
  .text.SystemInit
-                0x0800043c       0xa8 ..\obj\system_stm32f10x.o
-                0x0800043c                SystemInit
+                0x080002ec       0xa8 ..\obj\system_stm32f10x.o
+                0x080002ec                SystemInit
  .text.SetSysClock
-                0x080004e4        0xc ..\obj\system_stm32f10x.o
+                0x08000394        0xc ..\obj\system_stm32f10x.o
  .text.SetSysClockTo72
-                0x080004f0      0x1ac ..\obj\system_stm32f10x.o
+                0x080003a0      0x1ac ..\obj\system_stm32f10x.o
  .text.Default_Reset_Handler
-                0x0800069c       0x70 ..\obj\startup_stm32f10x_md.o
-                0x0800069c                Default_Reset_Handler
-                0x0800069c                Reset_Handler
+                0x0800054c       0x70 ..\obj\startup_stm32f10x_md.o
+                0x0800054c                Default_Reset_Handler
+                0x0800054c                Reset_Handler
  .text.Default_Handler
-                0x0800070c        0x8 ..\obj\startup_stm32f10x_md.o
-                0x0800070c                EXTI2_IRQHandler
-                0x0800070c                DebugMon_Handler
-                0x0800070c                TIM1_CC_IRQHandler
-                0x0800070c                HardFault_Handler
-                0x0800070c                SysTick_Handler
-                0x0800070c                PVD_IRQHandler
-                0x0800070c                PendSV_Handler
-                0x0800070c                NMI_Handler
-                0x0800070c                EXTI3_IRQHandler
-                0x0800070c                EXTI0_IRQHandler
-                0x0800070c                I2C2_EV_IRQHandler
-                0x0800070c                UsageFault_Handler
-                0x0800070c                ADC1_2_IRQHandler
-                0x0800070c                SPI1_IRQHandler
-                0x0800070c                TAMPER_IRQHandler
-                0x0800070c                DMA1_Channel4_IRQHandler
-                0x0800070c                USART3_IRQHandler
-                0x0800070c                RTC_IRQHandler
-                0x0800070c                DMA1_Channel7_IRQHandler
-                0x0800070c                CAN1_RX1_IRQHandler
-                0x0800070c                TIM4_IRQHandler
-                0x0800070c                I2C1_EV_IRQHandler
-                0x0800070c                DMA1_Channel6_IRQHandler
-                0x0800070c                RCC_IRQHandler
-                0x0800070c                TIM1_TRG_COM_IRQHandler
-                0x0800070c                DMA1_Channel1_IRQHandler
-                0x0800070c                EXTI15_10_IRQHandler
-                0x0800070c                EXTI9_5_IRQHandler
-                0x0800070c                SPI2_IRQHandler
-                0x0800070c                MemManage_Handler
-                0x0800070c                SVC_Handler
-                0x0800070c                DMA1_Channel5_IRQHandler
-                0x0800070c                EXTI4_IRQHandler
-                0x0800070c                USB_LP_CAN1_RX0_IRQHandler
-                0x0800070c                USB_HP_CAN1_TX_IRQHandler
-                0x0800070c                DMA1_Channel3_IRQHandler
-                0x0800070c                WWDG_IRQHandler
-                0x0800070c                TIM1_BRK_IRQHandler
-                0x0800070c                EXTI1_IRQHandler
-                0x0800070c                RTCAlarm_IRQHandler
-                0x0800070c                USART2_IRQHandler
-                0x0800070c                I2C2_ER_IRQHandler
-                0x0800070c                DMA1_Channel2_IRQHandler
-                0x0800070c                CAN1_SCE_IRQHandler
-                0x0800070c                FLASH_IRQHandler
-                0x0800070c                BusFault_Handler
-                0x0800070c                USART1_IRQHandler
-                0x0800070c                I2C1_ER_IRQHandler
-                0x0800070c                USBWakeUp_IRQHandler
- .text.main     0x08000714       0x74 ..\obj\main.o
-                0x08000714                main
+                0x080005bc        0x8 ..\obj\startup_stm32f10x_md.o
+                0x080005bc                EXTI2_IRQHandler
+                0x080005bc                DebugMon_Handler
+                0x080005bc                TIM1_CC_IRQHandler
+                0x080005bc                HardFault_Handler
+                0x080005bc                SysTick_Handler
+                0x080005bc                PVD_IRQHandler
+                0x080005bc                PendSV_Handler
+                0x080005bc                NMI_Handler
+                0x080005bc                EXTI3_IRQHandler
+                0x080005bc                EXTI0_IRQHandler
+                0x080005bc                I2C2_EV_IRQHandler
+                0x080005bc                UsageFault_Handler
+                0x080005bc                ADC1_2_IRQHandler
+                0x080005bc                SPI1_IRQHandler
+                0x080005bc                TAMPER_IRQHandler
+                0x080005bc                DMA1_Channel4_IRQHandler
+                0x080005bc                USART3_IRQHandler
+                0x080005bc                RTC_IRQHandler
+                0x080005bc                DMA1_Channel7_IRQHandler
+                0x080005bc                CAN1_RX1_IRQHandler
+                0x080005bc                TIM4_IRQHandler
+                0x080005bc                I2C1_EV_IRQHandler
+                0x080005bc                DMA1_Channel6_IRQHandler
+                0x080005bc                RCC_IRQHandler
+                0x080005bc                TIM1_TRG_COM_IRQHandler
+                0x080005bc                DMA1_Channel1_IRQHandler
+                0x080005bc                EXTI15_10_IRQHandler
+                0x080005bc                EXTI9_5_IRQHandler
+                0x080005bc                SPI2_IRQHandler
+                0x080005bc                MemManage_Handler
+                0x080005bc                SVC_Handler
+                0x080005bc                DMA1_Channel5_IRQHandler
+                0x080005bc                EXTI4_IRQHandler
+                0x080005bc                USB_LP_CAN1_RX0_IRQHandler
+                0x080005bc                USB_HP_CAN1_TX_IRQHandler
+                0x080005bc                DMA1_Channel3_IRQHandler
+                0x080005bc                WWDG_IRQHandler
+                0x080005bc                TIM1_BRK_IRQHandler
+                0x080005bc                EXTI1_IRQHandler
+                0x080005bc                RTCAlarm_IRQHandler
+                0x080005bc                USART2_IRQHandler
+                0x080005bc                I2C2_ER_IRQHandler
+                0x080005bc                DMA1_Channel2_IRQHandler
+                0x080005bc                CAN1_SCE_IRQHandler
+                0x080005bc                FLASH_IRQHandler
+                0x080005bc                BusFault_Handler
+                0x080005bc                USART1_IRQHandler
+                0x080005bc                I2C1_ER_IRQHandler
+                0x080005bc                USBWakeUp_IRQHandler
+ .text.main     0x080005c4       0x2c ..\obj\main.o
+                0x080005c4                main
  .text.clocks_init
-                0x08000788      0x100 ..\obj\main.o
-                0x08000788                clocks_init
+                0x080005f0      0x118 ..\obj\main.o
+                0x080005f0                clocks_init
  .text.gpio_init
-                0x08000888      0x138 ..\obj\main.o
-                0x08000888                gpio_init
+                0x08000708      0x138 ..\obj\main.o
+                0x08000708                gpio_init
  .text.NVIC_EnableIRQ
-                0x080009c0       0x38 ..\obj\leds.o
+                0x08000840       0x38 ..\obj\leds.o
  .text.leds_init
-                0x080009f8       0x38 ..\obj\leds.o
-                0x080009f8                leds_init
+                0x08000878       0x38 ..\obj\leds.o
+                0x08000878                leds_init
  .text.TIM1_UP_IRQHandler
-                0x08000a30        0xc ..\obj\leds.o
-                0x08000a30                TIM1_UP_IRQHandler
+                0x080008b0        0xc ..\obj\leds.o
+                0x080008b0                TIM1_UP_IRQHandler
  .text.TIM2_IRQHandler
-                0x08000a3c       0xd8 ..\obj\leds.o
-                0x08000a3c                TIM2_IRQHandler
+                0x080008bc       0xd8 ..\obj\leds.o
+                0x080008bc                TIM2_IRQHandler
  .text.motors_init
-                0x08000b14       0x98 ..\obj\motors.o
-                0x08000b14                motors_init
+                0x08000994       0x98 ..\obj\motors.o
+                0x08000994                motors_init
  .text.sensors_init
-                0x08000bac      0x12c ..\obj\sensors.o
-                0x08000bac                sensors_init
+                0x08000a2c      0x12c ..\obj\sensors.o
+                0x08000a2c                sensors_init
  .text.i2c_write
-                0x08000cd8      0x124 ..\obj\sensors.o
-                0x08000cd8                i2c_write
+                0x08000b58      0x124 ..\obj\sensors.o
+                0x08000b58                i2c_write
+ .text.lipo_init
+                0x08000c7c       0xe8 ..\obj\lipo.o
+                0x08000c7c                lipo_init
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
- .rodata        0x08000dfc        0xc ..\obj\sensors.o
+ .rodata        0x08000d64        0xc ..\obj\sensors.o
 
-.vfp11_veneer   0x08000e08        0x0
+.vfp11_veneer   0x08000d70        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x08000e08        0x0
+.v4_bx          0x08000d70        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x08000e08        0x0
+.iplt           0x08000d70        0x0
  .iplt          0x00000000        0x0 ..\obj\core_cm3.o
 
-.rel.dyn        0x08000e08        0x0
+.rel.dyn        0x08000d70        0x0
  .rel.iplt      0x00000000        0x0 ..\obj\core_cm3.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08000e08                __exidx_start = .
+                0x08000d70                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08000e08                __exidx_end = .
-                0x08000e08                . = ALIGN (0x4)
-                0x08000e08                _etext = .
-                0x08000e08                _sidata = .
+                0x08000d70                __exidx_end = .
+                0x08000d70                . = ALIGN (0x4)
+                0x08000d70                _etext = .
+                0x08000d70                _sidata = .
 
-.data           0x20000000       0x14 load address 0x08000e08
+.data           0x20000000       0x14 load address 0x08000d70
                 0x20000000                _sdata = .
  *(.data .data.*)
  .data          0x20000000       0x10 ..\obj\leds.o
@@ -240,10 +249,10 @@ Linker script and memory map
  *fill*         0x20000013        0x1 00
                 0x20000014                _edata = .
 
-.igot.plt       0x20000014        0x0 load address 0x08000e1c
+.igot.plt       0x20000014        0x0 load address 0x08000d84
  .igot.plt      0x00000000        0x0 ..\obj\core_cm3.o
 
-.bss            0x20000014       0x1c load address 0x08000e1c
+.bss            0x20000014       0x20 load address 0x08000d84
                 0x20000014                _sbss = .
  *(.bss .bss.*)
  .bss           0x20000014       0x18 ..\obj\buzzer.o
@@ -256,16 +265,19 @@ Linker script and memory map
  .bss           0x2000002c        0x4 ..\obj\leds.o
                 0x2000002c                i
  *(COMMON)
-                0x20000030                . = ALIGN (0x4)
-                0x20000030                _ebss = .
+ COMMON         0x20000030        0x4 ..\obj\main.o
+                0x20000030                ADCVal
+                0x20000034                . = ALIGN (0x4)
+                0x20000034                _ebss = .
 
-.co_stack       0x20000030      0x400 load address 0x08000e38
-                0x20000030                . = ALIGN (0x8)
+.co_stack       0x20000034      0x404 load address 0x08000da4
+                0x20000038                . = ALIGN (0x8)
+ *fill*         0x20000034        0x4 00
  *(.co_stack .co_stack.*)
- .co_stack      0x20000030      0x400 ..\obj\startup_stm32f10x_md.o
-                0x20000030                pulStack
-                0x20000430                . = ALIGN (0x4)
-                0x20000430                _end = .
+ .co_stack      0x20000038      0x400 ..\obj\startup_stm32f10x_md.o
+                0x20000038                pulStack
+                0x20000438                . = ALIGN (0x4)
+                0x20000438                _end = .
 LOAD ..\obj\core_cm3.o
 LOAD ..\obj\buzzer.o
 LOAD ..\obj\system_stm32f10x.o
@@ -274,6 +286,7 @@ LOAD ..\obj\main.o
 LOAD ..\obj\leds.o
 LOAD ..\obj\motors.o
 LOAD ..\obj\sensors.o
+LOAD ..\obj\lipo.o
 START GROUP
 LOAD c:/users/ffrea_000/desktop/gcc-arm-none-eabi-4_7-2013q2-20130614-win32/gnu tools arm embedded/4.7 2013q2/bin/../lib/gcc/arm-none-eabi/4.7.4/armv7-m\libgcc.a
 LOAD c:/users/ffrea_000/desktop/gcc-arm-none-eabi-4_7-2013q2-20130614-win32/gnu tools arm embedded/4.7 2013q2/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/armv7-m\libg.a
@@ -281,34 +294,37 @@ LOAD c:/users/ffrea_000/desktop/gcc-arm-none-eabi-4_7-2013q2-20130614-win32/gnu 
 END GROUP
 OUTPUT(Quadro.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x1d3f
+.debug_info     0x00000000     0x1f8d
  .debug_info    0x00000000      0x700 ..\obj\buzzer.o
  .debug_info    0x00000700      0x479 ..\obj\system_stm32f10x.o
  .debug_info    0x00000b79       0xff ..\obj\startup_stm32f10x_md.o
- .debug_info    0x00000c78      0x373 ..\obj\main.o
- .debug_info    0x00000feb      0x6cf ..\obj\leds.o
- .debug_info    0x000016ba      0x358 ..\obj\motors.o
- .debug_info    0x00001a12      0x32d ..\obj\sensors.o
+ .debug_info    0x00000c78      0x352 ..\obj\main.o
+ .debug_info    0x00000fca      0x6cf ..\obj\leds.o
+ .debug_info    0x00001699      0x358 ..\obj\motors.o
+ .debug_info    0x000019f1      0x32d ..\obj\sensors.o
+ .debug_info    0x00001d1e      0x26f ..\obj\lipo.o
 
-.debug_abbrev   0x00000000      0x81d
+.debug_abbrev   0x00000000      0x8f0
  .debug_abbrev  0x00000000      0x199 ..\obj\buzzer.o
  .debug_abbrev  0x00000199      0x179 ..\obj\system_stm32f10x.o
  .debug_abbrev  0x00000312       0xa9 ..\obj\startup_stm32f10x_md.o
- .debug_abbrev  0x000003bb      0x108 ..\obj\main.o
- .debug_abbrev  0x000004c3      0x165 ..\obj\leds.o
- .debug_abbrev  0x00000628       0xc6 ..\obj\motors.o
- .debug_abbrev  0x000006ee      0x12f ..\obj\sensors.o
+ .debug_abbrev  0x000003bb      0x11b ..\obj\main.o
+ .debug_abbrev  0x000004d6      0x165 ..\obj\leds.o
+ .debug_abbrev  0x0000063b       0xc6 ..\obj\motors.o
+ .debug_abbrev  0x00000701      0x12f ..\obj\sensors.o
+ .debug_abbrev  0x00000830       0xc0 ..\obj\lipo.o
 
-.debug_loc      0x00000000      0x478
+.debug_loc      0x00000000      0x498
  .debug_loc     0x00000000       0xf4 ..\obj\buzzer.o
  .debug_loc     0x000000f4       0xc8 ..\obj\system_stm32f10x.o
  .debug_loc     0x000001bc       0x64 ..\obj\startup_stm32f10x_md.o
- .debug_loc     0x00000220       0x90 ..\obj\main.o
- .debug_loc     0x000002b0       0xbc ..\obj\leds.o
- .debug_loc     0x0000036c       0x64 ..\obj\motors.o
- .debug_loc     0x000003d0       0xa8 ..\obj\sensors.o
+ .debug_loc     0x00000220       0x84 ..\obj\main.o
+ .debug_loc     0x000002a4       0xbc ..\obj\leds.o
+ .debug_loc     0x00000360       0x64 ..\obj\motors.o
+ .debug_loc     0x000003c4       0xa8 ..\obj\sensors.o
+ .debug_loc     0x0000046c       0x2c ..\obj\lipo.o
 
-.debug_aranges  0x00000000      0x160
+.debug_aranges  0x00000000      0x180
  .debug_aranges
                 0x00000000       0x40 ..\obj\buzzer.o
  .debug_aranges
@@ -323,8 +339,10 @@ OUTPUT(Quadro.elf elf32-littlearm)
                 0x00000108       0x28 ..\obj\motors.o
  .debug_aranges
                 0x00000130       0x30 ..\obj\sensors.o
+ .debug_aranges
+                0x00000160       0x20 ..\obj\lipo.o
 
-.debug_ranges   0x00000000       0xf0
+.debug_ranges   0x00000000      0x100
  .debug_ranges  0x00000000       0x30 ..\obj\buzzer.o
  .debug_ranges  0x00000030       0x28 ..\obj\system_stm32f10x.o
  .debug_ranges  0x00000058       0x18 ..\obj\startup_stm32f10x_md.o
@@ -332,31 +350,35 @@ OUTPUT(Quadro.elf elf32-littlearm)
  .debug_ranges  0x00000090       0x28 ..\obj\leds.o
  .debug_ranges  0x000000b8       0x18 ..\obj\motors.o
  .debug_ranges  0x000000d0       0x20 ..\obj\sensors.o
+ .debug_ranges  0x000000f0       0x10 ..\obj\lipo.o
 
-.debug_line     0x00000000      0xdeb
+.debug_line     0x00000000      0xfcb
  .debug_line    0x00000000      0x256 ..\obj\buzzer.o
  .debug_line    0x00000256      0x232 ..\obj\system_stm32f10x.o
  .debug_line    0x00000488       0xb5 ..\obj\startup_stm32f10x_md.o
- .debug_line    0x0000053d      0x22d ..\obj\main.o
- .debug_line    0x0000076a      0x210 ..\obj\leds.o
- .debug_line    0x0000097a      0x1f0 ..\obj\motors.o
- .debug_line    0x00000b6a      0x281 ..\obj\sensors.o
+ .debug_line    0x0000053d      0x232 ..\obj\main.o
+ .debug_line    0x0000076f      0x210 ..\obj\leds.o
+ .debug_line    0x0000097f      0x1f0 ..\obj\motors.o
+ .debug_line    0x00000b6f      0x281 ..\obj\sensors.o
+ .debug_line    0x00000df0      0x1db ..\obj\lipo.o
 
-.debug_str      0x00000000      0xa0e
+.debug_str      0x00000000      0xada
  .debug_str     0x00000000      0x5bb ..\obj\buzzer.o
                                 0x605 (size before relaxing)
  .debug_str     0x000005bb      0x193 ..\obj\system_stm32f10x.o
                                 0x295 (size before relaxing)
  .debug_str     0x0000074e       0xc3 ..\obj\startup_stm32f10x_md.o
                                 0x127 (size before relaxing)
- .debug_str     0x00000811       0x76 ..\obj\main.o
-                                0x1fb (size before relaxing)
- .debug_str     0x00000887       0x71 ..\obj\leds.o
+ .debug_str     0x00000811       0x82 ..\obj\main.o
+                                0x1e7 (size before relaxing)
+ .debug_str     0x00000893       0x71 ..\obj\leds.o
                                 0x5b0 (size before relaxing)
- .debug_str     0x000008f8       0x57 ..\obj\motors.o
+ .debug_str     0x00000904       0x57 ..\obj\motors.o
                                 0x263 (size before relaxing)
- .debug_str     0x0000094f       0xbf ..\obj\sensors.o
+ .debug_str     0x0000095b       0xc4 ..\obj\sensors.o
                                 0x226 (size before relaxing)
+ .debug_str     0x00000a1f       0xbb ..\obj\lipo.o
+                                0x1c1 (size before relaxing)
 
 .comment        0x00000000       0x70
  .comment       0x00000000       0x70 ..\obj\buzzer.o
@@ -367,6 +389,7 @@ OUTPUT(Quadro.elf elf32-littlearm)
  .comment       0x00000000       0x71 ..\obj\leds.o
  .comment       0x00000000       0x71 ..\obj\motors.o
  .comment       0x00000000       0x71 ..\obj\sensors.o
+ .comment       0x00000000       0x71 ..\obj\lipo.o
 
 .ARM.attributes
                 0x00000000       0x33
@@ -384,12 +407,15 @@ OUTPUT(Quadro.elf elf32-littlearm)
                 0x000000ff       0x33 ..\obj\motors.o
  .ARM.attributes
                 0x00000132       0x33 ..\obj\sensors.o
+ .ARM.attributes
+                0x00000165       0x33 ..\obj\lipo.o
 
-.debug_frame    0x00000000      0x2e0
+.debug_frame    0x00000000      0x304
  .debug_frame   0x00000000       0x94 ..\obj\buzzer.o
  .debug_frame   0x00000094       0x80 ..\obj\system_stm32f10x.o
  .debug_frame   0x00000114       0x48 ..\obj\startup_stm32f10x_md.o
- .debug_frame   0x0000015c       0x60 ..\obj\main.o
- .debug_frame   0x000001bc       0x78 ..\obj\leds.o
- .debug_frame   0x00000234       0x44 ..\obj\motors.o
- .debug_frame   0x00000278       0x68 ..\obj\sensors.o
+ .debug_frame   0x0000015c       0x5c ..\obj\main.o
+ .debug_frame   0x000001b8       0x78 ..\obj\leds.o
+ .debug_frame   0x00000230       0x44 ..\obj\motors.o
+ .debug_frame   0x00000274       0x68 ..\obj\sensors.o
+ .debug_frame   0x000002dc       0x28 ..\obj\lipo.o

@@ -53,7 +53,7 @@
       <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="HW RESET"/>
-      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="1"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="1"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
@@ -65,30 +65,42 @@
     </DebugOption>
     <ExcludeFile/>
   </Target>
-  <Components path="./"/>
+  <Components path="./">
+    <Component id="30" name="C Library" path="" type="2"/>
+    <Component id="31" name="Retarget printf" path="" type="2"/>
+    <Component id="33" name="Semihosting" path="" type="2"/>
+  </Components>
   <Files>
-    <File name="main.h" path="main.h" type="1"/>
-    <File name="cmsis" path="" type="2"/>
     <File name="lipo.c" path="lipo.c" type="1"/>
     <File name="cmsis_boot/system_stm32f10x.c" path="cmsis_boot/system_stm32f10x.c" type="1"/>
-    <File name="cmsis/core_cm3.c" path="cmsis/core_cm3.c" type="1"/>
+    <File name="stdio" path="" type="2"/>
     <File name="leds.h" path="leds.h" type="1"/>
-    <File name="buzzer.h" path="buzzer.h" type="1"/>
-    <File name="cmsis_boot/system_stm32f10x.h" path="cmsis_boot/system_stm32f10x.h" type="1"/>
     <File name="cmsis/core_cm3.h" path="cmsis/core_cm3.h" type="1"/>
     <File name="cmsis_boot" path="" type="2"/>
-    <File name="leds.c" path="leds.c" type="1"/>
     <File name="buzzer.c" path="buzzer.c" type="1"/>
-    <File name="lipo.h" path="lipo.h" type="1"/>
     <File name="sensors.c" path="sensors.c" type="1"/>
+    <File name="semihosting" path="" type="2"/>
     <File name="motors.h" path="motors.h" type="1"/>
     <File name="sensors.h" path="sensors.h" type="1"/>
+    <File name="semihosting/sh_cmd.s" path="semihosting/sh_cmd.s" type="1"/>
     <File name="cmsis_boot/startup" path="" type="2"/>
+    <File name="semihosting/semihosting.c" path="semihosting/semihosting.c" type="1"/>
+    <File name="cmsis_boot/stm32f10x.h" path="cmsis_boot/stm32f10x.h" type="1"/>
+    <File name="cmsis_boot/stm32f10x_conf.h" path="cmsis_boot/stm32f10x_conf.h" type="1"/>
+    <File name="main.h" path="main.h" type="1"/>
+    <File name="cmsis" path="" type="2"/>
+    <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
+    <File name="cmsis/core_cm3.c" path="cmsis/core_cm3.c" type="1"/>
+    <File name="buzzer.h" path="buzzer.h" type="1"/>
+    <File name="cmsis_boot/system_stm32f10x.h" path="cmsis_boot/system_stm32f10x.h" type="1"/>
+    <File name="leds.c" path="leds.c" type="1"/>
+    <File name="syscalls" path="" type="2"/>
+    <File name="lipo.h" path="lipo.h" type="1"/>
+    <File name="semihosting/semihosting.h" path="semihosting/semihosting.h" type="1"/>
+    <File name="stdio/printf.c" path="stdio/printf.c" type="1"/>
     <File name="cmsis_boot/startup/startup_stm32f10x_md.c" path="cmsis_boot/startup/startup_stm32f10x_md.c" type="1"/>
     <File name="motors.c" path="motors.c" type="1"/>
-    <File name="cmsis_boot/stm32f10x.h" path="cmsis_boot/stm32f10x.h" type="1"/>
-    <File name="main.c" path="main.c" type="1"/>
-    <File name="cmsis_boot/stm32f10x_conf.h" path="cmsis_boot/stm32f10x_conf.h" type="1"/>
     <File name="hdr_bitband.h" path="hdr_bitband.h" type="1"/>
+    <File name="main.c" path="main.c" type="1"/>
   </Files>
 </Project>

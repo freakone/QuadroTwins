@@ -1,16 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=Quadro.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\Quadro -TC:\CooCox\CoIDE\configuration\ProgramData\Quadro/arm-gcc-link.ld -g">
-      <target file="Quadro.elf" lastModified="14069306228">
-         <source file="..\obj\core_cm3.o" lastModified="14069305c89"/>
-         <source file="..\obj\buzzer.o" lastModified="14069305ce0"/>
-         <source file="..\obj\system_stm32f10x.o" lastModified="14069305d30"/>
-         <source file="..\obj\startup_stm32f10x_md.o" lastModified="14069305d67"/>
-         <source file="..\obj\main.o" lastModified="14069305ddc"/>
-         <source file="..\obj\leds.o" lastModified="14069305ed1"/>
-         <source file="..\obj\motors.o" lastModified="14069305f26"/>
-         <source file="..\obj\sensors.o" lastModified="14069305fe4"/>
-         <source file="..\obj\lipo.o" lastModified="1406930602f"/>
+      <target file="Quadro.elf" lastModified="14074a8d483">
+         <source file="..\obj\semihosting.o" lastModified="140749a37ee"/>
+         <source file="..\obj\core_cm3.o" lastModified="140749a383a"/>
+         <source file="..\obj\buzzer.o" lastModified="140749a3895"/>
+         <source file="..\obj\system_stm32f10x.o" lastModified="140749a38e9"/>
+         <source file="..\obj\startup_stm32f10x_md.o" lastModified="140749a3929"/>
+         <source file="..\obj\main.o" lastModified="14074a618c8"/>
+         <source file="..\obj\printf.o" lastModified="140749a3a3d"/>
+         <source file="..\obj\leds.o" lastModified="140749a3b10"/>
+         <source file="..\obj\sh_cmd.o" lastModified="140749a3b1e"/>
+         <source file="..\obj\syscalls.o" lastModified="140749a3b6a"/>
+         <source file="..\obj\motors.o" lastModified="140749a3bb6"/>
+         <source file="..\obj\sensors.o" lastModified="14074a8d287"/>
+         <source file="..\obj\lipo.o" lastModified="140749a3d04"/>
       </target>
    </processor>
 </history>

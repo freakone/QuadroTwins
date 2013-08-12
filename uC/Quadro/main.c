@@ -4,23 +4,41 @@
 #include "sensors.h"
 #include "lipo.h"
 #include "buzzer.h"
+#include "semihosting/semihosting.h"
+
 #define BTN (GPIOC->IDR & GPIO_IDR_IDR13)
 
 int main(void)
 {
+	int i;
+	for(i = 0; i < 500000;i++); //delay to ensure sensors poweron
+
+
 	clocks_init();
 	leds_init();
 	gpio_init();
 	motors_init();
-	sensors_init();
+	do{	sensors_error_flag = 0;
+		sensors_init(); }
+	while(sensors_error_flag);
+
 	buzzer_init();
 	lipo_init();
-/*	play_buzz(1000, 2, 1, 2);
+	/*play_buzz(1000, 2, 1, 2);
 	wait_buzz();
-	play_buzz(500, 2, 1, 4);*/
+	play_buzz(500, 1, 1, 3);
+	wait_buzz();*/
+	char *pStr;
 
 	while(1)
 	{
+		sensors_read();
+		sprintf(pStr, "%d ", magneto.x);
+		SH_SendString(pStr);
+		sprintf(pStr, "%d ", magneto.y);
+		SH_SendString(pStr);
+		sprintf(pStr, "%d \r\n", magneto.z);
+		SH_SendString(pStr);
 		if(BTN)
 		{
 			//GPIOC->ODR |= GPIO_ODR_ODR2;
@@ -29,6 +47,7 @@ int main(void)
 		{
 
 		}
+
 	}
 }
 
@@ -46,7 +65,7 @@ void clocks_init()
 	while(!(RCC->CFGR & RCC_CFGR_SWS_PLL));
 
 	RCC->APB1ENR |= RCC_APB1ENR_TIM3EN | RCC_APB1ENR_I2C2EN | RCC_APB1ENR_TIM4EN | RCC_APB1ENR_USART2EN | RCC_APB1ENR_TIM2EN;
-	RCC->APB2ENR |= RCC_APB2ENR_IOPCEN | RCC_APB2ENR_ADC1EN | RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_SPI1EN | RCC_APB2ENR_TIM1EN;
+	RCC->APB2ENR |= RCC_APB2ENR_IOPCEN | RCC_APB2ENR_ADC1EN | RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_SPI1EN | RCC_APB2ENR_TIM1EN | RCC_APB2ENR_AFIOEN;
 	RCC->AHBENR |= RCC_AHBENR_DMA1EN;
 }
 

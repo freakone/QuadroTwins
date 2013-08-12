@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dependencies>
-   <includePath signature="/I..\..\..\..\..\Users\ffrea_000 /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis_boot /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis /I..\..\..\..\..\Users\ffrea_000\Desktop /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins /I..\..\..\..\..\Users">
+   <includePath signature="/I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\semihosting /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis_boot /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins">
       <source file="..\..\..\leds.h" lastModified="140598eb530">
       </source>
       <source file="..\..\..\cmsis_boot\stm32f10x.h" lastModified="14058f99f88">
@@ -14,6 +14,10 @@
          <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
          <include file="..\..\..\hdr_bitband.h"/>
       </source>
+      <source file="..\..\..\lipo.c" lastModified="14069305a35">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\lipo.h"/>
+      </source>
       <source file="..\..\..\cmsis_boot\stm32f10x_conf.h" lastModified="14058f99ba1">
       </source>
       <source file="..\..\..\buzzer.h" lastModified="140685375e3">
@@ -23,66 +27,43 @@
       </source>
       <source file="..\..\..\cmsis\core_cm3.h" lastModified="14058f97be1">
       </source>
-      <source file="..\..\..\motors.h" lastModified="14059b38e04">
+      <source file="..\..\..\stdio\printf.c" lastModified="1406dd305b5">
+      </source>
+      <source file="..\..\..\motors.h" lastModified="1406d14e453">
+      </source>
+      <source file="..\..\..\syscalls\syscalls.c" lastModified="1406dd30d9a">
       </source>
       <source file="..\..\..\cmsis\core_cm3.c" lastModified="14058f977f4">
       </source>
       <source file="..\..\..\motors.c" lastModified="140680dfb35">
          <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
       </source>
-      <source file="..\..\..\sensors.h" lastModified="14062f4d654">
+      <source file="..\..\..\semihosting\semihosting.h" lastModified="1406dd2fd40">
+      </source>
+      <source file="..\..\..\sensors.h" lastModified="140749b91c1">
       </source>
       <source file="..\..\..\cmsis_boot\system_stm32f10x.h" lastModified="14058f99bb3">
       </source>
-      <source file="..\..\..\main.c" lastModified="14069019a8d">
+      <source file="..\..\..\main.c" lastModified="14074a61592">
          <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
          <include file="..\..\..\leds.h"/>
          <include file="..\..\..\motors.h"/>
          <include file="..\..\..\sensors.h"/>
          <include file="..\..\..\lipo.h"/>
          <include file="..\..\..\buzzer.h"/>
+         <include file="..\..\..\semihosting\semihosting.h"/>
+      </source>
+      <source file="..\..\..\semihosting\semihosting.c" lastModified="1406dd304ff">
+         <include file="..\..\..\semihosting\semihosting.h"/>
+      </source>
+      <source file="..\..\..\semihosting\sh_cmd.s" lastModified="1406dd2fd8b">
+      </source>
+      <source file="..\..\..\sensors.c" lastModified="14074a8cee2">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\sensors.h"/>
       </source>
       <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="14058f99bb3">
          <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
-      </source>
-      <source file="..\..\..\sensors.c" lastModified="14062f5270a">
-         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
-         <include file="..\..\..\sensors.h"/>
-      </source>
-      <source file="..\..\..\hdr_bitband.h" lastModified="136a755af53">
-      </source>
-      <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="14058f99b9c">
-      </source>
-   </includePath>
-   <includePath signature="/I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis_boot /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins">
-      <source file="..\..\..\leds.h" lastModified="140598eb530">
-      </source>
-      <source file="..\..\..\leds.c" lastModified="1406335fccb">
-         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
-         <include file="..\..\..\hdr_bitband.h"/>
-      </source>
-      <source file="..\..\..\cmsis_boot\stm32f10x_conf.h" lastModified="14058f99ba1">
-      </source>
-      <source file="..\..\..\buzzer.h" lastModified="140685375e3">
-      </source>
-      <source file="..\..\..\buzzer.c" lastModified="1406853660f">
-         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
-      </source>
-      <source file="..\..\..\motors.h" lastModified="14059b38e04">
-      </source>
-      <source file="..\..\..\motors.c" lastModified="140680dfb35">
-         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
-      </source>
-      <source file="..\..\..\sensors.h" lastModified="14062f4d654">
-      </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f10x.h" lastModified="14058f99bb3">
-      </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="14058f99bb3">
-         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
-      </source>
-      <source file="..\..\..\sensors.c" lastModified="14062f5270a">
-         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
-         <include file="..\..\..\sensors.h"/>
       </source>
       <source file="..\..\..\hdr_bitband.h" lastModified="136a755af53">
       </source>

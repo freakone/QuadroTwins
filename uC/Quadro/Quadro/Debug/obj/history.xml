@@ -1,43 +1,43 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F103RB -DSTM32F10X_MD -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\semihosting -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis_boot -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins">
-      <target file="lipo.o" lastModified="140749a3d04">
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F103RB -DSTM32F10X_MD -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis_boot -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins">
+      <target file="lipo.o" lastModified="1407c6d8f68">
          <source file="..\..\..\lipo.c" lastModified="14069305a35"/>
       </target>
-      <target file="syscalls.o" lastModified="140749a3b6a">
-         <source file="..\..\..\syscalls\syscalls.c" lastModified="1406dd2fdfa"/>
+      <target file="syscalls.o" lastModified="1407c6d8d27">
+         <source file="..\..\..\syscalls\syscalls.c" lastModified="140786976ba"/>
       </target>
-      <target file="buzzer.o" lastModified="140749a3895">
+      <target file="regulation.o" lastModified="1407c80ceb2">
+         <source file="..\..\..\regulation.c" lastModified="1407c80cc07"/>
+      </target>
+      <target file="buzzer.o" lastModified="1407c6d8a9f">
          <source file="..\..\..\buzzer.c" lastModified="1406853660f"/>
       </target>
-      <target file="sensors.o" lastModified="14074a8d287">
-         <source file="..\..\..\sensors.c" lastModified="14074a8cee2"/>
+      <target file="leds.o" lastModified="1407c6d8cdf">
+         <source file="..\..\..\leds.c" lastModified="1407c02a639"/>
       </target>
-      <target file="leds.o" lastModified="140749a3b10">
-         <source file="..\..\..\leds.c" lastModified="1406335fccb"/>
+      <target file="sensors.o" lastModified="1407c6d8f1d">
+         <source file="..\..\..\sensors.c" lastModified="1407c0f49bc"/>
       </target>
-      <target file="printf.o" lastModified="140749a3a3d">
-         <source file="..\..\..\stdio\printf.c" lastModified="1406dd2fde5"/>
+      <target file="printf.o" lastModified="1407c6d8c8d">
+         <source file="..\..\..\stdio\printf.c" lastModified="140786976a2"/>
       </target>
-      <target file="core_cm3.o" lastModified="140749a383a">
+      <target file="core_cm3.o" lastModified="1407c6d8a36">
          <source file="..\..\..\cmsis\core_cm3.c" lastModified="14058f9740c"/>
       </target>
-      <target file="system_stm32f10x.o" lastModified="140749a38e9">
+      <target file="system_stm32f10x.o" lastModified="1407c6d8aef">
          <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="14058f99bb3"/>
       </target>
-      <target file="main.o" lastModified="14074a618c8">
-         <source file="..\..\..\main.c" lastModified="14074a61592"/>
+      <target file="main.o" lastModified="1407c735bcf">
+         <source file="..\..\..\main.c" lastModified="1407c729753"/>
       </target>
-      <target file="sh_cmd.o" lastModified="140749a3b1e">
-         <source file="..\..\..\semihosting\sh_cmd.s" lastModified="1406dd2fd8b"/>
+      <target file="usart.o" lastModified="1407c735c30">
+         <source file="..\..\..\usart.c" lastModified="1407c732205"/>
       </target>
-      <target file="semihosting.o" lastModified="140749a37ee">
-         <source file="..\..\..\semihosting\semihosting.c" lastModified="1406dd2fd2f"/>
+      <target file="motors.o" lastModified="1407c6d8d76">
+         <source file="..\..\..\motors.c" lastModified="140790cf88b"/>
       </target>
-      <target file="motors.o" lastModified="140749a3bb6">
-         <source file="..\..\..\motors.c" lastModified="140680dfb35"/>
-      </target>
-      <target file="startup_stm32f10x_md.o" lastModified="140749a3929">
+      <target file="startup_stm32f10x_md.o" lastModified="1407c6d8b22">
          <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="14058f99b9c"/>
       </target>
    </processor>

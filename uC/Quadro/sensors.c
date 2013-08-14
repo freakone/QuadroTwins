@@ -7,7 +7,14 @@ void sensors_init()
 	i2c_config();
 
 	gyro.address = 212;
+	gyro.scale = 0.070;
+	gyro.pid.p = 1;
+	gyro.pid.i = 0.1;
+	gyro.pid.d = 0.01;
+	gyro.pid.dt = 1;
+
 	acc.address = 48;
+	acc.scale = 0.004;
 	magneto.address = 28;
 
 	//accelero conf

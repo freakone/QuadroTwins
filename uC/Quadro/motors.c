@@ -15,6 +15,7 @@ void motors_init()
 	TIM4->CCR4 = 0;
 }
 
+
 //0 - 3276
 void motor_set(int i, unsigned int val)
 {
@@ -40,3 +41,12 @@ void motor_set(int i, unsigned int val)
 	}
 
 }
+
+uint8_t numberMotor = 4;
+int maxThrottle = 3000;
+int minThrottle = 300;
+float motor[4] = { 2000.0f, 2000.0f, 2000.0f, 2000.0f};
+
+#define PIDMIX(X,Y,Z) rxCommand[THROTTLE] + axisPID[ROLL] * (X) + axisPID[PITCH] * (Y) + eepromConfig.yawDirection * axisPID[YAW] * (Z)
+
+

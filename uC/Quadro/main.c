@@ -4,7 +4,7 @@
 #include "sensors.h"
 #include "lipo.h"
 #include "buzzer.h"
-#include "semihosting/semihosting.h"
+#include "regulation.h"
 
 #define BTN (GPIOC->IDR & GPIO_IDR_IDR13)
 
@@ -24,30 +24,17 @@ int main(void)
 
 	buzzer_init();
 	lipo_init();
+	usart_init();
+	regulation_init();
+
 	/*play_buzz(1000, 2, 1, 2);
 	wait_buzz();
 	play_buzz(500, 1, 1, 3);
 	wait_buzz();*/
-	char *pStr;
+
 
 	while(1)
 	{
-		sensors_read();
-		sprintf(pStr, "%d ", magneto.x);
-		SH_SendString(pStr);
-		sprintf(pStr, "%d ", magneto.y);
-		SH_SendString(pStr);
-		sprintf(pStr, "%d \r\n", magneto.z);
-		SH_SendString(pStr);
-		if(BTN)
-		{
-			//GPIOC->ODR |= GPIO_ODR_ODR2;
-		}
-		else
-		{
-
-		}
-
 	}
 }
 
@@ -71,8 +58,8 @@ void clocks_init()
 
 void gpio_init()
 {
-	GPIOA->CRL &= ~(GPIO_CRL_CNF1 | GPIO_CRL_CNF4 | GPIO_CRL_CNF2 | GPIO_CRL_CNF5  | GPIO_CRL_CNF6 | GPIO_CRL_CNF7);
-	GPIOA->CRL |= GPIO_CRL_MODE1 | GPIO_CRL_MODE2 | GPIO_CRL_CNF2_1 | GPIO_CRL_MODE3 | GPIO_CRL_CNF3 | GPIO_CRL_MODE4 |
+	GPIOA->CRL &= ~(GPIO_CRL_CNF1 | GPIO_CRL_CNF4 | GPIO_CRL_CNF2 |  GPIO_CRL_CNF3 | GPIO_CRL_CNF5  | GPIO_CRL_CNF6 | GPIO_CRL_CNF7);
+	GPIOA->CRL |= GPIO_CRL_MODE1 | GPIO_CRL_MODE2 | GPIO_CRL_CNF2_1 | GPIO_CRL_MODE3 | GPIO_CRL_CNF3_1 | GPIO_CRL_MODE4 |
 			GPIO_CRL_MODE5 | GPIO_CRL_CNF5_1 | GPIO_CRL_MODE6 | GPIO_CRL_CNF6_1 | GPIO_CRL_MODE7 | GPIO_CRL_CNF7_1;
 
 

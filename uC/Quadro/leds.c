@@ -9,13 +9,6 @@
 
 void leds_init()
 {
-	/*TIM1->PSC = 23999;
-	TIM1->ARR = 1000;
-	TIM1->DIER = TIM_DIER_UIE;
-	TIM1->CR1 = TIM_CR1_CEN;
-
-	NVIC_EnableIRQ(TIM1_UP_IRQn); // Enable interrupt from TIM3 (NVIC level)
-*/
 	TIM2->PSC = 23999;
 	TIM2->ARR = 1000;
 	TIM2->DIER = TIM_DIER_UIE;
@@ -27,11 +20,7 @@ void leds_init()
 
 
 }
-void TIM1_UP_IRQHandler(void)
-{
 
-
-}
 
 uint32_t* leds[]= {BITBAND(&GPIOA->ODR, 1), BITBAND(&GPIOB->ODR, 12),BITBAND(&GPIOC->ODR, 1),BITBAND(&GPIOC->ODR, 2)};
 int i = 0;

@@ -204,6 +204,7 @@ UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/lem.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/linear-technology.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/linear.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/linx.lbr"
+UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/lm35.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/logo.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/lprs.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/lsi-computer-systems.lbr"
@@ -357,12 +358,11 @@ UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/xilinx-xc9.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/xilinx-xcv.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/zetex.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/zilog.lbr"
-UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/lm35.lbr"
 
 [Win_1]
 Type="Control Panel"
 Loc="652 321 1251 720"
-State=1
+State=3
 Number=0
 
 [Desktop]

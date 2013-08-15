@@ -8,13 +8,10 @@ void sensors_init()
 
 	gyro.address = 212;
 	gyro.scale = 0.070;
-	gyro.pid.p = 1;
-	gyro.pid.i = 0.1;
-	gyro.pid.d = 0.01;
-	gyro.pid.dt = 1;
 
 	acc.address = 48;
-	acc.scale = 0.004;
+	acc.scale = 0.00025;
+
 	magneto.address = 28;
 
 	//accelero conf
@@ -36,9 +33,7 @@ void sensors_init()
 	i2c_write2(magneto.address, 0x10, 0x01);
 
 
-
-
-	AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI3_PB;
+	/*AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI3_PB;
 	AFIO->EXTICR[1] |= AFIO_EXTICR2_EXTI4_PC | AFIO_EXTICR2_EXTI5_PC;
 
 	EXTI->IMR |= EXTI_IMR_MR3 | EXTI_IMR_MR4 | EXTI_IMR_MR5;
@@ -48,7 +43,7 @@ void sensors_init()
 	NVIC_EnableIRQ(EXTI4_IRQn);
 	NVIC_EnableIRQ(EXTI9_5_IRQn);
 
-
+*/
 }
 
 int error_check()

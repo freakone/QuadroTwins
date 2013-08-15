@@ -2,8 +2,8 @@
 
 void motors_init()
 {
-	TIM4->PSC = 1440000;
-	TIM4->ARR = 1000;
+	TIM4->PSC = 65535;
+	TIM4->ARR = 10000;
 	TIM4->CCMR1 = TIM_CCMR1_OC1M_2 | TIM_CCMR1_OC1M_1 | TIM_CCMR1_OC2M_2 | TIM_CCMR1_OC2M_1;
 	TIM4->CCMR2 = TIM_CCMR2_OC4M_2 | TIM_CCMR2_OC4M_1 | TIM_CCMR2_OC3M_2 | TIM_CCMR2_OC3M_1;
 	TIM4->CCER = TIM_CCER_CC1E | TIM_CCER_CC2E  | TIM_CCER_CC3E | TIM_CCER_CC4E;
@@ -41,12 +41,3 @@ void motor_set(int i, unsigned int val)
 	}
 
 }
-
-uint8_t numberMotor = 4;
-int maxThrottle = 3000;
-int minThrottle = 300;
-float motor[4] = { 2000.0f, 2000.0f, 2000.0f, 2000.0f};
-
-#define PIDMIX(X,Y,Z) rxCommand[THROTTLE] + axisPID[ROLL] * (X) + axisPID[PITCH] * (Y) + eepromConfig.yawDirection * axisPID[YAW] * (Z)
-
-

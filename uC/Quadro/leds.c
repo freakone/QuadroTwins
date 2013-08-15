@@ -9,8 +9,8 @@
 
 void leds_init()
 {
-	TIM2->PSC = 23999;
-	TIM2->ARR = 1000;
+	TIM2->PSC = 140;
+	TIM2->ARR = 65535;
 	TIM2->DIER = TIM_DIER_UIE;
 	TIM2->CR1 = TIM_CR1_CEN;
 

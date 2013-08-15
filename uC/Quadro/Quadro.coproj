@@ -21,7 +21,7 @@
         <Option name="UseMemoryLayout" value="1"/>
         <Option name="LTO" value="0"/>
         <Option name="IsNewStartupCode" value="1"/>
-        <Option name="Library" value="Not use C Library"/>
+        <Option name="Library" value="Use base C Library"/>
         <LinkedLibraries/>
         <MemoryAreas debugInFlashNotRAM="1">
           <Memory name="IROM1" type="ReadOnly" size="0x00020000" startValue="0x08000000"/>
@@ -95,7 +95,9 @@
     <File name="leds.c" path="leds.c" type="1"/>
     <File name="syscalls" path="" type="2"/>
     <File name="lipo.h" path="lipo.h" type="1"/>
+    <File name="aparature.c" path="aparature.c" type="1"/>
     <File name="stdio/printf.c" path="stdio/printf.c" type="1"/>
+    <File name="aparature.h" path="aparature.h" type="1"/>
     <File name="cmsis_boot/startup/startup_stm32f10x_md.c" path="cmsis_boot/startup/startup_stm32f10x_md.c" type="1"/>
     <File name="motors.c" path="motors.c" type="1"/>
     <File name="regulation.h" path="regulation.h" type="1"/>

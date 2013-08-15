@@ -1,14 +1,7 @@
 void sensors_init();
 uint8_t i2c_read2(uint8_t adres, uint8_t reg_adres);
+int extern sensors_error_flag;
 
-typedef struct {
-
-	float p;
-	float i;
-	float d;
-	float dt;
-
-} PIDStruct;
 
 typedef struct {
 
@@ -17,7 +10,6 @@ typedef struct {
 	int16_t z;
 	uint8_t address;
 	float scale;
-	PIDStruct pid;
 
 } Accelerometer;
 
@@ -28,7 +20,6 @@ typedef struct {
 	int16_t z;
 	uint8_t address;
 	float scale;
-	PIDStruct pid;
 
 } Gyroscope;
 
@@ -38,7 +29,6 @@ typedef struct {
 	int16_t y;
 	int16_t z;
 	uint8_t address;
-	PIDStruct pid;
 
 } Magnetometer;
 

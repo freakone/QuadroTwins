@@ -20,7 +20,7 @@ void regulation_init()
 	TIM1->PSC = 7199;
 	TIM1->ARR = 100;
 	TIM1->DIER = TIM_DIER_UIE;
-	TIM1->CR1 = TIM_CR1_CEN;
+//	TIM1->CR1 = TIM_CR1_CEN;
 
 	NVIC_EnableIRQ(TIM1_UP_IRQn);
 }

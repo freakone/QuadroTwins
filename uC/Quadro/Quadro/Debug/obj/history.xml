@@ -7,8 +7,8 @@
       <target file="syscalls.o" lastModified="14082287113">
          <source file="..\..\..\syscalls\syscalls.c" lastModified="140786976ba"/>
       </target>
-      <target file="regulation.o" lastModified="14082286d75">
-         <source file="..\..\..\regulation.c" lastModified="14081de2c9a"/>
+      <target file="regulation.o" lastModified="1408688e60c">
+         <source file="..\..\..\regulation.c" lastModified="14086880c6f"/>
       </target>
       <target file="buzzer.o" lastModified="14082286e18">
          <source file="..\..\..\buzzer.c" lastModified="1406853660f"/>
@@ -34,8 +34,8 @@
       <target file="main.o" lastModified="140822a9b61">
          <source file="..\..\..\main.c" lastModified="140822a98e8"/>
       </target>
-      <target file="usart.o" lastModified="1408228738f">
-         <source file="..\..\..\usart.c" lastModified="14081ea93e6"/>
+      <target file="usart.o" lastModified="1408688e6d0">
+         <source file="..\..\..\usart.c" lastModified="1408688b68c"/>
       </target>
       <target file="motors.o" lastModified="14082287161">
          <source file="..\..\..\motors.c" lastModified="14082177ae4"/>

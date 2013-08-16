@@ -66,10 +66,10 @@ void USART2_IRQHandler()
 			iPower-=100;
 			break;
 		case 0x03:
-			pid.p += 0.1;
+			pid.p += 1;
 			break;
 		case 0x04:
-			pid.p -= 0.1;
+			pid.p -= 1;
 			break;
 		case 0x05:
 			pid.i += 0.01;
@@ -82,6 +82,12 @@ void USART2_IRQHandler()
 			break;
 		case 0x08:
 			pid.d -= 0.001;
+			break;
+		case 0x09:
+			TIM1->CR1 = TIM_CR1_CEN;
+			break;
+		case 0x10:
+			TIM1->CR1 &= ~TIM_CR1_CEN;
 			break;
 		}
 

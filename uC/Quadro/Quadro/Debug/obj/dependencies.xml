@@ -24,17 +24,6 @@
       </source>
       <source file="..\..\..\buzzer.h" lastModified="140685375e3">
       </source>
-      <source file="..\..\..\regulation.c" lastModified="14081de3082">
-         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
-         <include file="..\..\..\sensors.h"/>
-         <include file="..\..\..\regulation.h"/>
-         <include file="..\..\..\motors.h"/>
-      </source>
-      <source file="..\..\..\usart.c" lastModified="14081ea93e6">
-         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
-         <include file="..\..\..\sensors.h"/>
-         <include file="..\..\..\regulation.h"/>
-      </source>
       <source file="..\..\..\buzzer.c" lastModified="1406853660f">
          <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
       </source>
@@ -52,6 +41,16 @@
          <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
       </source>
       <source file="..\..\..\aparature.h" lastModified="140822728f0">
+      </source>
+      <source file="..\..\..\main.c" lastModified="140822a98e8">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\leds.h"/>
+         <include file="..\..\..\motors.h"/>
+         <include file="..\..\..\sensors.h"/>
+         <include file="..\..\..\lipo.h"/>
+         <include file="..\..\..\buzzer.h"/>
+         <include file="..\..\..\regulation.h"/>
+         <include file="..\..\..\aparature.h"/>
       </source>
       <source file="..\..\..\cmsis_boot\system_stm32f10x.h" lastModified="14058f99bb3">
       </source>

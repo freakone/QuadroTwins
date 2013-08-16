@@ -300,6 +300,7 @@ UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/sensor-infratec.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/sharp.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/silabs.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/sim-technology.lbr"
+UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/sim900.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/sipex.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/smd-ipc.lbr"
 UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/smd-special.lbr"
@@ -362,7 +363,7 @@ UsedLibrary="C:/Program Files (x86)/EAGLE-6.3.0/lbr/zilog.lbr"
 [Win_1]
 Type="Control Panel"
 Loc="652 321 1251 720"
-State=3
+State=2
 Number=0
 
 [Desktop]

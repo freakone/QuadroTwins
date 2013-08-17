@@ -23611,26 +23611,6 @@ Es handelt sich hierbei um AK500 in horizontaler Ausführung.&lt;p&gt;
 <pinref part="IC3" gate="G$1" pin="ADJ"/>
 </segment>
 <segment>
-<pinref part="JP5" gate="G$1" pin="2"/>
-<wire x1="121.92" y1="205.74" x2="127" y2="205.74" width="0.1524" layer="91"/>
-<label x="127" y="205.74" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="JP6" gate="G$1" pin="2"/>
-<wire x1="121.92" y1="191.77" x2="127" y2="191.77" width="0.1524" layer="91"/>
-<label x="127" y="191.77" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="JP7" gate="G$1" pin="2"/>
-<wire x1="123.19" y1="179.07" x2="128.27" y2="179.07" width="0.1524" layer="91"/>
-<label x="128.27" y="179.07" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="JP8" gate="G$1" pin="2"/>
-<wire x1="124.46" y1="165.1" x2="129.54" y2="165.1" width="0.1524" layer="91"/>
-<label x="129.54" y="165.1" size="1.778" layer="95"/>
-</segment>
-<segment>
 <label x="254" y="210.82" size="1.778" layer="95"/>
 <pinref part="LED5" gate="G$1" pin="C"/>
 <junction x="254" y="181.61"/>
@@ -23684,6 +23664,26 @@ Es handelt sich hierbei um AK500 in horizontaler Ausführung.&lt;p&gt;
 <wire x1="177.8" y1="162.56" x2="177.8" y2="157.48" width="0.1524" layer="91"/>
 <label x="170.18" y="157.48" size="1.778" layer="95"/>
 <junction x="177.8" y="162.56"/>
+</segment>
+<segment>
+<pinref part="JP6" gate="G$1" pin="1"/>
+<wire x1="121.92" y1="189.23" x2="127" y2="189.23" width="0.1524" layer="91"/>
+<label x="127" y="189.23" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP7" gate="G$1" pin="1"/>
+<wire x1="123.19" y1="176.53" x2="128.27" y2="176.53" width="0.1524" layer="91"/>
+<label x="128.27" y="176.53" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP8" gate="G$1" pin="1"/>
+<wire x1="124.46" y1="162.56" x2="129.54" y2="162.56" width="0.1524" layer="91"/>
+<label x="129.54" y="162.56" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP5" gate="G$1" pin="1"/>
+<wire x1="121.92" y1="203.2" x2="127" y2="203.2" width="0.1524" layer="91"/>
+<label x="127" y="203.2" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SWDIO" class="0">
@@ -24122,29 +24122,29 @@ Es handelt sich hierbei um AK500 in horizontaler Ausführung.&lt;p&gt;
 </net>
 <net name="5V" class="0">
 <segment>
-<pinref part="JP5" gate="G$1" pin="1"/>
-<wire x1="121.92" y1="203.2" x2="127" y2="203.2" width="0.1524" layer="91"/>
-<label x="127" y="203.2" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="JP6" gate="G$1" pin="1"/>
-<wire x1="121.92" y1="189.23" x2="127" y2="189.23" width="0.1524" layer="91"/>
-<label x="127" y="189.23" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="JP7" gate="G$1" pin="1"/>
-<wire x1="123.19" y1="176.53" x2="128.27" y2="176.53" width="0.1524" layer="91"/>
-<label x="128.27" y="176.53" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="JP8" gate="G$1" pin="1"/>
-<wire x1="124.46" y1="162.56" x2="129.54" y2="162.56" width="0.1524" layer="91"/>
-<label x="129.54" y="162.56" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="JP9" gate="G$1" pin="1"/>
 <wire x1="119.38" y1="223.52" x2="127" y2="223.52" width="0.1524" layer="91"/>
 <label x="127" y="223.52" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP5" gate="G$1" pin="2"/>
+<wire x1="121.92" y1="205.74" x2="127" y2="205.74" width="0.1524" layer="91"/>
+<label x="127" y="205.74" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP6" gate="G$1" pin="2"/>
+<wire x1="121.92" y1="191.77" x2="127" y2="191.77" width="0.1524" layer="91"/>
+<label x="127" y="191.77" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP7" gate="G$1" pin="2"/>
+<wire x1="123.19" y1="179.07" x2="128.27" y2="179.07" width="0.1524" layer="91"/>
+<label x="128.27" y="179.07" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP8" gate="G$1" pin="2"/>
+<wire x1="124.46" y1="165.1" x2="129.54" y2="165.1" width="0.1524" layer="91"/>
+<label x="129.54" y="165.1" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="REG1" class="0">

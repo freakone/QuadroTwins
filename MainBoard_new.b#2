@@ -8,7 +8,7 @@
 </settings>
 <grid distance="0" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -3763,7 +3763,6 @@ design rules under a new name.</description>
 </signal>
 <signal name="INT_ACC">
 <contactref element="LSM330DLC" pad="P20"/>
-<contactref element="U1" pad="56"/>
 <wire x1="40.747" y1="46.3315" x2="40.747" y2="46.6731125" width="0.254" layer="16"/>
 <wire x1="40.747" y1="46.6731125" x2="43.17405625" y2="49.10016875" width="0.254" layer="16"/>
 <via x="43.17405625" y="49.10016875" extent="1-16" drill="0.6" shape="square"/>
@@ -3782,12 +3781,11 @@ design rules under a new name.</description>
 <wire x1="12.298209375" y1="53.244628125" x2="12.298209375" y2="42.27600625" width="0.254" layer="1"/>
 <wire x1="12.298209375" y1="42.27600625" x2="15.089790625" y2="39.484425" width="0.254" layer="1"/>
 <wire x1="15.089790625" y1="39.484425" x2="15.089790625" y2="35.644690625" width="0.254" layer="1"/>
-<wire x1="15.089790625" y1="35.644690625" x2="17.466828125" y2="33.267653125" width="0.254" layer="1"/>
-<wire x1="17.466828125" y1="33.267653125" x2="18.427653125" y2="33.267653125" width="0.254" layer="1"/>
-<wire x1="18.427653125" y1="33.267653125" x2="18.43" y2="33.27" width="0.254" layer="1"/>
+<contactref element="U1" pad="55"/>
+<wire x1="18.43" y1="33.77" x2="16.96448125" y2="33.77" width="0.254" layer="1"/>
+<wire x1="16.96448125" y1="33.77" x2="15.089790625" y2="35.644690625" width="0.254" layer="1"/>
 </signal>
 <signal name="INT_GYRO">
-<contactref element="LSM330DLC" pad="P18"/>
 <contactref element="U1" pad="25"/>
 <wire x1="29.83" y1="33.27" x2="37.42609375" y2="33.27" width="0.254" layer="1"/>
 <wire x1="37.42609375" y1="33.27" x2="46.580665625" y2="42.424571875" width="0.254" layer="1"/>
@@ -3797,11 +3795,11 @@ design rules under a new name.</description>
 <wire x1="42.224359375" y1="47.6236875" x2="40.757209375" y2="49.0908375" width="0.254" layer="1"/>
 <via x="40.757209375" y="49.0908375" extent="1-16" drill="0.6" shape="square"/>
 <wire x1="40.757209375" y1="49.0908375" x2="39.876925" y2="49.0908375" width="0.254" layer="16"/>
-<wire x1="39.876925" y1="49.0908375" x2="39.788896875" y2="49.002809375" width="0.254" layer="16"/>
-<wire x1="39.788896875" y1="49.002809375" x2="39.788896875" y2="46.9488" width="0.254" layer="16"/>
-<wire x1="39.788896875" y1="46.9488" x2="39.730209375" y2="46.8901125" width="0.254" layer="16"/>
-<wire x1="39.730209375" y1="46.8901125" x2="39.730209375" y2="46.348290625" width="0.254" layer="16"/>
-<wire x1="39.730209375" y1="46.348290625" x2="39.747" y2="46.3315" width="0.254" layer="16"/>
+<wire x1="39.876925" y1="49.0908375" x2="39.78400625" y2="48.99791875" width="0.254" layer="16"/>
+<contactref element="LSM330DLC" pad="P17"/>
+<wire x1="39.247" y1="46.3315" x2="39.247" y2="46.94625" width="0.254" layer="16"/>
+<wire x1="39.247" y1="46.94625" x2="39.78400625" y2="47.48325625" width="0.254" layer="16"/>
+<wire x1="39.78400625" y1="47.48325625" x2="39.78400625" y2="48.99791875" width="0.254" layer="16"/>
 </signal>
 <signal name="A4">
 <contactref element="JP2" pad="2"/>

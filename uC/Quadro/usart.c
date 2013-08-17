@@ -45,7 +45,24 @@ void debug_data()
 	/*sprintf(str, "gyro: %d %d %d \r\n", gyro.x, gyro.y, gyro.z);
 	usart_puts(str);*/
 
-	sprintf(str, "Power: %d P: %d I: %d D: %d Angle: %d \r\n", iPower, (int)(pid.p*100), (int)(pid.i*100), (int)(pid.d*100), (int)(x_angle*100));
+	sprintf(str, "Power: %d P: %d I: %d D: %d Angle: %d\r\n", iPower, (int)(pid.p*100), (int)(pid.i*100), (int)(pid.d*100), (int)(x_angle*100));
+	usart_puts(str);
+
+
+}
+
+void debug_data2()
+{
+
+	char str[100];
+/*	sprintf(str, "magneto: %d %d %d \r\n", magneto.x, magneto.y, magneto.z);
+	usart_puts(str);
+	sprintf(str, "acc: %d %d %d \r\n", acc.x, acc.y, acc.z);
+	usart_puts(str);
+	/*sprintf(str, "gyro: %d %d %d \r\n", gyro.x, gyro.y, gyro.z);
+	usart_puts(str);*/
+
+	sprintf(str, "%d\r\n", (int)(x_angle*100));
 	usart_puts(str);
 
 
@@ -66,10 +83,10 @@ void USART2_IRQHandler()
 			iPower-=100;
 			break;
 		case 0x03:
-			pid.p += 1;
+			pid.p += 0.1;
 			break;
 		case 0x04:
-			pid.p -= 1;
+			pid.p -= 0.1;
 			break;
 		case 0x05:
 			pid.i += 0.01;
@@ -78,20 +95,38 @@ void USART2_IRQHandler()
 			pid.i -= 0.01;
 			break;
 		case 0x07:
-			pid.d += 0.001;
+			pid.d += 0.01;
 			break;
 		case 0x08:
-			pid.d -= 0.001;
+			pid.d -= 0.01;
 			break;
 		case 0x09:
-			TIM1->CR1 = TIM_CR1_CEN;
+			TIM1->CR1 |= TIM_CR1_CEN;
+			break;
+		case 0x0A:
+			angle_set += 10;
+			break;
+		case 0x0B:
+			angle_set -= 10;
 			break;
 		case 0x10:
 			TIM1->CR1 &= ~TIM_CR1_CEN;
+			motor_set(1, 0);
+			motor_set(2, 0);
+			motor_set(3, 0);
+			motor_set(4, 0);
 			break;
+
+		case 0x0C:
+			debug_data();
+			break;
+		case 0x0D:
+			debug_data2();
+			break;
+
 		}
 
-		debug_data();
+
 
 	}
 

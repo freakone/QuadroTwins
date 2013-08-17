@@ -9,10 +9,41 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="usart.c" partName="usart.c" path="E:/QuadroTwins/uC/Quadro/usart.c" title="usart.c" tooltip="E:/QuadroTwins/uC/Quadro/usart.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/usart.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1990" selectionTopPixel="1114"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="regulation.c" partName="regulation.c" path="E:/QuadroTwins/uC/Quadro/regulation.c" title="regulation.c" tooltip="E:/QuadroTwins/uC/Quadro/regulation.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/regulation.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1070" selectionTopPixel="360"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="E:/QuadroTwins/uC/Quadro/main.c" title="main.c" tooltip="E:/QuadroTwins/uC/Quadro/main.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/main.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="263" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="motors.c" partName="motors.c" path="E:/QuadroTwins/uC/Quadro/motors.c" title="motors.c" tooltip="E:/QuadroTwins/uC/Quadro/motors.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/motors.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="471" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="motors.h" partName="motors.h" path="E:/QuadroTwins/uC/Quadro/motors.h" title="motors.h" tooltip="E:/QuadroTwins/uC/Quadro/motors.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/motors.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="77" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="regulation.h" partName="regulation.h" path="E:/QuadroTwins/uC/Quadro/regulation.h" title="regulation.h" tooltip="E:/QuadroTwins/uC/Quadro/regulation.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/regulation.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="179" selectionTopPixel="0"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
@@ -22,9 +53,11 @@
 <viewState CommonNavigator.LINKING_ENABLED="1" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
 <expanded>
 <element path="/Quadro"/>
+<element path="/Quadro/cmsis_boot"/>
+<element path="/Quadro/cmsis_boot/startup"/>
 </expanded>
 <selection>
-<element path="/Quadro/usart.c"/>
+<element path="/Quadro/motors.c"/>
 </selection>
 </viewState>
 </view>
@@ -46,19 +79,16 @@
 <view id="org.coocox.coassistant.view.CoAssistantView_debug" partName="Peripherals">
 <viewState horizontalPosition="0" verticalPosition="0">
 <selection>
-<element name="GPIOA"/>
+<element name="TIM4"/>
 </selection>
-<registerValues baseAddress="Base Address: 0x40010800" description="Description:  General Purpose I/O A"/>
+<registerValues baseAddress="Base Address: 0x40000800" description="Description:  TIM4 registers"/>
 </viewState>
 </view>
 <view id="org.eclipse.debug.ui.VariableView" partName="Variables">
 <viewState/>
 </view>
-<view id="org.coocox.component.ui.Help" partName="Help">
-<viewState/>
-</view>
 </views>
-<perspectives activePart="org.coocox.builder.ui.views.ProjectView" activePerspective="org.coocox.builder.perspective.CoBuilder">
+<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="org.coocox.builder.perspective.CoBuilder">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.coocox.builder.ui.PerspectiveCoBuilder" id="org.coocox.builder.perspective.CoBuilder" label="CooCox CoBuilder"/>
 <alwaysOnActionSet id="org.coocox.component.ui.actionSet"/>
@@ -90,14 +120,26 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
 <view id="org.coocox.builder.ui.views.ProjectView"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
-<view id="org.eclipse.search.ui.views.SearchView"/>
-<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
-<view id="org.coocox.component.ui.Help"/>
-<fastViewBars/>
+<fastViewBars>
+<fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@1316ff8" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="1">
+<fastViews>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.20700637"/>
+<view id="org.eclipse.search.ui.views.SearchView" ratio="0.3"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
 <layout>
 <mainWindow>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1b7ad0">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@13962d">
+<folder activePageID="org.coocox.builder.ui.views.ProjectView" appearance="2" expanded="2">
+<page content="org.coocox.builder.ui.views.ProjectView" label="Project"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1b7ad0" ratio="0.25" ratioLeft="478" ratioRight="1434" relationship="2" relative="org.eclipse.ui.internal.ViewStack@13962d">
 <folder appearance="2" expanded="2">
 <page content="org.coocox.component.ui.ComponentView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
@@ -110,37 +152,28 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1316ff8" ratio="0.6992561" ratioLeft="658" ratioRight="283" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1b7ad0">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
-<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
-<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-</presentation>
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.coocox.builder.ui.exampleView" ratio="0.21966527" ratioLeft="420" ratioRight="1492" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1b7ad0"/>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1f2ae71" ratio="0.71983916" ratioLeft="1074" ratioRight="418" relationship="2" relative="org.coocox.builder.ui.exampleView">
-<folder activePageID="org.coocox.component.ui.Help" appearance="2" expanded="2">
-<page content="org.coocox.component.ui.Help" label="Help"/>
+<folder appearance="2" expanded="2">
+<page content="org.coocox.component.ui.Help" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <page content="org.coocox.coassistant.view.CoAssistantView" label="LabelNotFound"/>
 <page content="org.coocox.builder.ui.MoreExampleView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.44952178" ratioLeft="423" ratioRight="518" relationship="4" relative="org.coocox.builder.ui.exampleView"/>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1c1df4" ratio="0.36981934" ratioLeft="348" ratioRight="593" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1b7ad0">
-<folder activePageID="org.coocox.builder.ui.views.ProjectView" appearance="2" expanded="2">
-<page content="org.coocox.builder.ui.views.ProjectView" label="Project"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<folder appearance="2" expanded="0">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </mainWindow>
@@ -188,8 +221,8 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.coocox.builder.ui.build"/>
 <hide_toolbar_item_id id="org.coocox.welcome.ui.action.welcome"/>
-<hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
 <hide_toolbar_item_id id="org.coocox.component.ui.ShowRepositoryAction"/>
+<hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
 <view id="org.eclipse.debug.ui.VariableView"/>
 <view id="org.eclipse.search.ui.views.SearchView"/>
 <view id="org.coocox.codebugger.trace.ui.traceview"/>
@@ -259,30 +292,205 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/motors.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/buzzer.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/usart.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/regulation.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/cmsis_boot/startup/startup_stm32f10x_md.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/regulation.h"/>
+</editors>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="717" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="513" y="0"/>
+</item>
+<item historyLabel="startup_stm32f10x_md.c" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="263" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position info="not_deleted" x="929" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="263" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="1501" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position info="not_deleted" x="929" y="0"/>
+</item>
+<item historyLabel="motors.c" index="1">
+<position info="not_deleted" x="471" y="0"/>
+</item>
+<item historyLabel="buzzer.c" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="motors.c" index="1">
+<position info="not_deleted" x="471" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="1554" y="11"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="263" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position info="not_deleted" x="1790" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="263" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="1554" y="11"/>
+</item>
+<item historyLabel="regulation.h" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position info="not_deleted" x="1790" y="0"/>
+</item>
+<item historyLabel="regulation.h" index="6">
+<position info="not_deleted" x="180" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position/>
+</item>
+<item historyLabel="regulation.h" index="6">
+<position info="not_deleted" x="180" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="1492" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position info="not_deleted" x="1009" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="1535" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position info="not_deleted" x="1009" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="1535" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="1505" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="263" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="1505" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="263" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position info="not_deleted" x="1701" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="1141" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position info="not_deleted" x="1876" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="1039" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="263" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="543" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="543" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="1161" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position info="not_deleted" x="1016" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="1161" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position info="not_deleted" x="1016" y="0"/>
+</item>
+<item historyLabel="regulation.c" index="4">
+<position info="not_deleted" x="1070" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="263" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position info="not_deleted" x="1016" y="0"/>
+</item>
+<item historyLabel="regulation.h" index="6">
+<position info="not_deleted" x="179" y="0"/>
+</item>
+<item historyLabel="usart.c" index="3">
+<position info="not_deleted" x="1990" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="263" y="0"/>
+</item>
+<item active="true" historyLabel="motors.c" index="1">
+<position info="not_deleted" x="471" y="0"/>
+</item>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="regulation.h" tooltip="Quadro/regulation.h">
+<persistable path="/Quadro/regulation.h"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f10x_md.c" tooltip="Quadro/cmsis_boot/startup/startup_stm32f10x_md.c">
 <persistable path="/Quadro/cmsis_boot/startup/startup_stm32f10x_md.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="leds.c" tooltip="Quadro/leds.c">
-<persistable path="/Quadro/leds.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="motors.h" tooltip="Quadro/motors.h">
+<persistable path="/Quadro/motors.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="buzzer.c" tooltip="Quadro/buzzer.c">
+<persistable path="/Quadro/buzzer.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="motors.c" tooltip="Quadro/motors.c">
+<persistable path="/Quadro/motors.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="Quadro/main.c">
 <persistable path="/Quadro/main.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="regulation.c" tooltip="Quadro/regulation.c">
+<persistable path="/Quadro/regulation.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usart.c" tooltip="Quadro/usart.c">
+<persistable path="/Quadro/usart.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="leds.c" tooltip="Quadro/leds.c">
+<persistable path="/Quadro/leds.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="aparature.c" tooltip="Quadro/aparature.c">
 <persistable path="/Quadro/aparature.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="aparature.h" tooltip="Quadro/aparature.h">
 <persistable path="/Quadro/aparature.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="regulation.h" tooltip="Quadro/regulation.h">
-<persistable path="/Quadro/regulation.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="sensors.c" tooltip="Quadro/sensors.c">
 <persistable path="/Quadro/sensors.c"/>
@@ -292,24 +500,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x.h" tooltip="Quadro/cmsis_boot/stm32f10x.h">
 <persistable path="/Quadro/cmsis_boot/stm32f10x.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_conf.h" tooltip="Quadro/cmsis_boot/stm32f10x_conf.h">
-<persistable path="/Quadro/cmsis_boot/stm32f10x_conf.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f10x.h" tooltip="Quadro/cmsis_boot/system_stm32f10x.h">
-<persistable path="/Quadro/cmsis_boot/system_stm32f10x.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="regulation.c" tooltip="Quadro/regulation.c">
-<persistable path="/Quadro/regulation.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="motors.c" tooltip="Quadro/motors.c">
-<persistable path="/Quadro/motors.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usart.c" tooltip="Quadro/usart.c">
-<persistable path="/Quadro/usart.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="Quadro/main.h">
-<persistable path="/Quadro/main.h"/>
 </file>
 </mruList>
 </workbench>

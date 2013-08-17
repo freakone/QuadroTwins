@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=Quadro.map -O0 --gc-sections -lm -lgcc -lc -LC:\CooCox\CoIDE\configuration\ProgramData\Quadro -TC:\CooCox\CoIDE\configuration\ProgramData\Quadro/arm-gcc-link.ld -g">
-      <target file="Quadro.elf" lastModified="1408688ea8e">
-         <source file="..\obj\regulation.o" lastModified="1408688e60c"/>
-         <source file="..\obj\core_cm3.o" lastModified="14082286dc4"/>
-         <source file="..\obj\buzzer.o" lastModified="14082286e18"/>
-         <source file="..\obj\system_stm32f10x.o" lastModified="14082286e6a"/>
-         <source file="..\obj\startup_stm32f10x_md.o" lastModified="14082286e9e"/>
-         <source file="..\obj\main.o" lastModified="140822a9b61"/>
-         <source file="..\obj\printf.o" lastModified="14082287006"/>
-         <source file="..\obj\aparature.o" lastModified="14082287054"/>
-         <source file="..\obj\leds.o" lastModified="140822870c5"/>
-         <source file="..\obj\syscalls.o" lastModified="14082287113"/>
-         <source file="..\obj\motors.o" lastModified="14082287161"/>
-         <source file="..\obj\sensors.o" lastModified="140822872da"/>
-         <source file="..\obj\lipo.o" lastModified="14082287324"/>
-         <source file="..\obj\usart.o" lastModified="1408688e6d0"/>
+      <target file="Quadro.elf" lastModified="14087a0a190">
+         <source file="..\obj\regulation.o" lastModified="140877989c0"/>
+         <source file="..\obj\core_cm3.o" lastModified="140877090e0"/>
+         <source file="..\obj\buzzer.o" lastModified="140877090e0"/>
+         <source file="..\obj\system_stm32f10x.o" lastModified="140877090e0"/>
+         <source file="..\obj\startup_stm32f10x_md.o" lastModified="140877090e0"/>
+         <source file="..\obj\main.o" lastModified="140877989c0"/>
+         <source file="..\obj\printf.o" lastModified="140877090e0"/>
+         <source file="..\obj\aparature.o" lastModified="140877090e0"/>
+         <source file="..\obj\leds.o" lastModified="140877090e0"/>
+         <source file="..\obj\syscalls.o" lastModified="140877090e0"/>
+         <source file="..\obj\motors.o" lastModified="140877090e0"/>
+         <source file="..\obj\sensors.o" lastModified="140877098b0"/>
+         <source file="..\obj\lipo.o" lastModified="140877098b0"/>
+         <source file="..\obj\usart.o" lastModified="14087a099c0"/>
       </target>
    </processor>
 </history>

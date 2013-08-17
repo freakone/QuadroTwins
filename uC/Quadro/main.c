@@ -30,14 +30,23 @@ int main(void)
 	aparature_init();
 	regulation_init();
 
-	/*play_buzz(1000, 2, 1, 2);
+	play_buzz(1000, 2, 1, 2);
 	wait_buzz();
 	play_buzz(500, 2, 1, 3);
-	wait_buzz();*/
+	wait_buzz();
 
 	usart_puts("Quadro started!\r\n");
+
+
 	while(1)
 	{
+		if(!BTN)
+		{
+			motor_set(1, 300);
+			motor_set(2, 300);
+			motor_set(3, 300);
+			motor_set(4, 300);
+		}
 	}
 }
 
@@ -66,11 +75,13 @@ void gpio_init()
 			GPIO_CRL_MODE5 | GPIO_CRL_CNF5_1 | GPIO_CRL_MODE6 | GPIO_CRL_CNF6_1 | GPIO_CRL_MODE7 | GPIO_CRL_CNF7_1;
 
 
-	GPIOB->CRL &= ~(GPIO_CRL_CNF1 | GPIO_CRL_CNF6 | GPIO_CRL_CNF7 | GPIO_CRH_CNF8 | GPIO_CRH_CNF9 | GPIO_CRL_CNF0);
+	GPIOB->CRL &= ~(GPIO_CRL_CNF1 | GPIO_CRL_CNF6 | GPIO_CRL_CNF7  | GPIO_CRL_CNF0);
 	GPIOB->CRL |= GPIO_CRL_MODE1 | GPIO_CRL_CNF1_1 | GPIO_CRL_MODE6 | GPIO_CRL_CNF6_1 | GPIO_CRL_MODE7 | GPIO_CRL_CNF7_1;
+
+	GPIOB->CRH &= ~(GPIO_CRH_CNF12 | GPIO_CRH_CNF13 | GPIO_CRH_CNF14 | GPIO_CRH_CNF8 | GPIO_CRH_CNF9);
 	GPIOB->CRH |= GPIO_CRH_MODE8 | GPIO_CRH_CNF8_1 | GPIO_CRH_MODE9 | GPIO_CRH_CNF9_1 | GPIO_CRH_MODE10 | GPIO_CRH_CNF10 | GPIO_CRH_MODE11 | GPIO_CRH_CNF11 |
 			GPIO_CRH_MODE12 | GPIO_CRH_MODE13 | GPIO_CRH_MODE14;
-	GPIOB->CRH &= ~(GPIO_CRH_CNF12 | GPIO_CRH_CNF13 | GPIO_CRH_CNF14);
+
 
 	GPIOC->CRL |= GPIO_CRL_MODE3 | GPIO_CRL_MODE2 | GPIO_CRL_MODE1;
 	GPIOC->CRL &= ~(GPIO_CRL_CNF3 | GPIO_CRL_CNF2 | GPIO_CRL_CNF1);

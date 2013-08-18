@@ -31,19 +31,6 @@ void sensors_init()
 	//magneto conf
 	i2c_write2(magneto.address, 0x11, 0x80);
 	i2c_write2(magneto.address, 0x10, 0x01);
-
-
-	/*AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI3_PB;
-	AFIO->EXTICR[1] |= AFIO_EXTICR2_EXTI4_PC | AFIO_EXTICR2_EXTI5_PC;
-
-	EXTI->IMR |= EXTI_IMR_MR3 | EXTI_IMR_MR4 | EXTI_IMR_MR5;
-	EXTI->RTSR |= EXTI_RTSR_TR3 | EXTI_RTSR_TR4 | EXTI_RTSR_TR5;
-
-	NVIC_EnableIRQ(EXTI3_IRQn);
-	NVIC_EnableIRQ(EXTI4_IRQn);
-	NVIC_EnableIRQ(EXTI9_5_IRQn);
-
-*/
 }
 
 int error_check()
@@ -96,32 +83,6 @@ void sensors_read()
 	magneto.z = (i2c_read2(magneto.address, 0x05)&0xFF) << 8;
 	magneto.z |= (i2c_read2(magneto.address, 0x06)&0xFF);
 
-}
-
-void EXTI3_IRQHandler(void)
-{
-	if(EXTI->PR & EXTI_PR_PR3) //AKCELERO
-	{
-
-		EXTI->PR |= EXTI_PR_PR3;
-	}
-}
-
-void EXTI4_IRQHandler(void)
-{
-	if(EXTI->PR & EXTI_PR_PR4) //MAGNETO
-	{
-		EXTI->PR |= EXTI_PR_PR4;
-
-	}
-}
-void EXTI9_5_IRQHandler(void)
-{
-	if(EXTI->PR & EXTI_PR_PR5)//GYRO
-	{
-		EXTI->PR |= EXTI_PR_PR5;
-
-	}
 }
 
 void i2c_write2(uint8_t address, uint8_t reg, uint8_t data)
@@ -195,7 +156,7 @@ void i2c_write(uint8_t address, uint8_t* data, uint32_t length)
 uint8_t i2c_read2(uint8_t adres, uint8_t reg_adres)
 {
 	uint8_t dane[1];
-	i2c_read(adres, reg_adres, &dane, 1);
+	i2c_read(adres, reg_adres, dane, 1);
 	return dane[0];
 }
 

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dependencies>
-   <includePath signature="/IE:\QuadroTwins\uC\Quadro\cmsis /IE:\QuadroTwins\uC\Quadro\cmsis_boot /IE:\QuadroTwins\uC /IE:\QuadroTwins /IE:\QuadroTwins\uC\Quadro">
+   <includePath signature="/I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis_boot /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis /I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins">
       <source file="..\..\..\leds.h" lastModified="1407c012ad0">
       </source>
       <source file="..\..\..\cmsis_boot\stm32f10x.h" lastModified="14058f9a738">
@@ -18,18 +18,13 @@
          <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
          <include file="..\..\..\lipo.h"/>
       </source>
-      <source file="..\..\..\regulation.h" lastModified="1408778bea0">
+      <source file="..\..\..\regulation.h" lastModified="14091031bce">
       </source>
       <source file="..\..\..\cmsis_boot\stm32f10x_conf.h" lastModified="14058f9a350">
       </source>
       <source file="..\..\..\buzzer.h" lastModified="14068537a60">
       </source>
-      <source file="..\..\..\usart.c" lastModified="14087a091f0">
-         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
-         <include file="..\..\..\sensors.h"/>
-         <include file="..\..\..\regulation.h"/>
-      </source>
-      <source file="..\..\..\regulation.c" lastModified="14087782648">
+      <source file="..\..\..\regulation.c" lastModified="14091031fac">
          <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
          <include file="..\..\..\sensors.h"/>
          <include file="..\..\..\regulation.h"/>
@@ -53,9 +48,9 @@
       </source>
       <source file="..\..\..\aparature.h" lastModified="14082272c20">
       </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f10x.h" lastModified="14058f9a350">
+      <source file="..\..\..\sensors.h" lastModified="1409106aaaf">
       </source>
-      <source file="..\..\..\sensors.h" lastModified="14081b68830">
+      <source file="..\..\..\cmsis_boot\system_stm32f10x.h" lastModified="14058f9a350">
       </source>
       <source file="..\..\..\main.c" lastModified="14086f1faa0">
          <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
@@ -71,7 +66,7 @@
          <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
          <include file="..\..\..\aparature.h"/>
       </source>
-      <source file="..\..\..\sensors.c" lastModified="14081a2f090">
+      <source file="..\..\..\sensors.c" lastModified="14091066056">
          <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
          <include file="..\..\..\sensors.h"/>
       </source>

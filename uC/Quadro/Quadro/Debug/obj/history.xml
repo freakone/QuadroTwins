@@ -1,46 +1,46 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F103RB -DSTM32F10X_MD -IE:\QuadroTwins\uC\Quadro\cmsis -IE:\QuadroTwins\uC\Quadro\cmsis_boot -IE:\QuadroTwins\uC -IE:\QuadroTwins -IE:\QuadroTwins\uC\Quadro">
-      <target file="lipo.o" lastModified="140877098b0">
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F103RB -DSTM32F10X_MD -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis_boot -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins\uC\Quadro\cmsis -I..\..\..\..\..\Users\ffrea_000\Desktop\GitHub\QuadroTwins">
+      <target file="lipo.o" lastModified="1409105cd5b">
          <source file="..\..\..\lipo.c" lastModified="14069305d40"/>
       </target>
-      <target file="syscalls.o" lastModified="140877090e0">
+      <target file="syscalls.o" lastModified="1409105cbac">
          <source file="..\..\..\syscalls\syscalls.c" lastModified="14078697d50"/>
       </target>
-      <target file="regulation.o" lastModified="140877989c0">
-         <source file="..\..\..\regulation.c" lastModified="14087782260"/>
+      <target file="regulation.o" lastModified="1409106ad0c">
+         <source file="..\..\..\regulation.c" lastModified="14091031bc4"/>
       </target>
-      <target file="buzzer.o" lastModified="140877090e0">
+      <target file="buzzer.o" lastModified="1409105c8d0">
          <source file="..\..\..\buzzer.c" lastModified="14068536ac0"/>
       </target>
-      <target file="leds.o" lastModified="140877090e0">
+      <target file="leds.o" lastModified="1409105cb64">
          <source file="..\..\..\leds.c" lastModified="1408218a560"/>
       </target>
-      <target file="sensors.o" lastModified="140877098b0">
-         <source file="..\..\..\sensors.c" lastModified="14081a2f090"/>
+      <target file="sensors.o" lastModified="1409106adfd">
+         <source file="..\..\..\sensors.c" lastModified="14091066056"/>
       </target>
-      <target file="printf.o" lastModified="140877090e0">
+      <target file="printf.o" lastModified="1409105ca73">
          <source file="..\..\..\stdio\printf.c" lastModified="14078697d50"/>
       </target>
-      <target file="core_cm3.o" lastModified="140877090e0">
+      <target file="core_cm3.o" lastModified="1409105c881">
          <source file="..\..\..\cmsis\core_cm3.c" lastModified="14058f97470"/>
       </target>
-      <target file="system_stm32f10x.o" lastModified="140877090e0">
+      <target file="system_stm32f10x.o" lastModified="1409105c921">
          <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="14058f9a350"/>
       </target>
-      <target file="aparature.o" lastModified="140877090e0">
+      <target file="aparature.o" lastModified="1409105cac0">
          <source file="..\..\..\aparature.c" lastModified="14082282620"/>
       </target>
-      <target file="main.o" lastModified="140877989c0">
+      <target file="main.o" lastModified="1409106ad7c">
          <source file="..\..\..\main.c" lastModified="14086f1faa0"/>
       </target>
-      <target file="usart.o" lastModified="14087a099c0">
-         <source file="..\..\..\usart.c" lastModified="14087a091f0"/>
+      <target file="usart.o" lastModified="14091072387">
+         <source file="..\..\..\usart.c" lastModified="14091072000"/>
       </target>
-      <target file="motors.o" lastModified="140877090e0">
+      <target file="motors.o" lastModified="1409105cc2c">
          <source file="..\..\..\motors.c" lastModified="14086f0f8d0"/>
       </target>
-      <target file="startup_stm32f10x_md.o" lastModified="140877090e0">
+      <target file="startup_stm32f10x_md.o" lastModified="1409105c957">
          <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="14058f9a350"/>
       </target>
    </processor>

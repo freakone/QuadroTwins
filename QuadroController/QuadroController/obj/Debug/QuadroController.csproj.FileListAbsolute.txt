@@ -1,0 +1,9 @@
+c:\users\ffrea_000\documents\visual studio 2013\Projects\QuadroController\QuadroController\bin\Debug\QuadroController.exe.config
+c:\users\ffrea_000\documents\visual studio 2013\Projects\QuadroController\QuadroController\bin\Debug\QuadroController.exe
+c:\users\ffrea_000\documents\visual studio 2013\Projects\QuadroController\QuadroController\bin\Debug\QuadroController.pdb
+c:\users\ffrea_000\documents\visual studio 2013\Projects\QuadroController\QuadroController\obj\Debug\QuadroController.csprojResolveAssemblyReference.cache
+c:\users\ffrea_000\documents\visual studio 2013\Projects\QuadroController\QuadroController\obj\Debug\QuadroController.Form1.resources
+c:\users\ffrea_000\documents\visual studio 2013\Projects\QuadroController\QuadroController\obj\Debug\QuadroController.Properties.Resources.resources
+c:\users\ffrea_000\documents\visual studio 2013\Projects\QuadroController\QuadroController\obj\Debug\QuadroController.csproj.GenerateResource.Cache
+c:\users\ffrea_000\documents\visual studio 2013\Projects\QuadroController\QuadroController\obj\Debug\QuadroController.exe
+c:\users\ffrea_000\documents\visual studio 2013\Projects\QuadroController\QuadroController\obj\Debug\QuadroController.pdb

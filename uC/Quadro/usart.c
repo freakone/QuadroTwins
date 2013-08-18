@@ -174,8 +174,33 @@ void buffer_parse()
 					dec2hascii((int)(fAngles[i].z*100), 5);
 			}
 
+			fAnglesPos = 0;
 			usart_put(0x0A);
 
+			break;
+
+		case 0x25:
+
+			usart_put(0xFF);
+			usart_put(0x25);
+			dec2hascii((int)(pid[0].p*100), 5);
+			dec2hascii((int)(pid[0].i*100), 5);
+			dec2hascii((int)(pid[0].d*100), 5);
+			dec2hascii((int)(pid[1].p*100), 5);
+			dec2hascii((int)(pid[1].i*100), 5);
+			dec2hascii((int)(pid[1].d*100), 5);
+			dec2hascii(iPower, 5);
+			dec2hascii(ADCVal[0], 5);
+			dec2hascii(ADCVal[1], 5);
+			usart_put(0x0A);
+			break;
+
+		case 0x26:
+			usart_put(0xFF);
+			usart_put(0x26);
+			dec2hascii(ADCVal[0], 5);
+			dec2hascii(ADCVal[1], 5);
+			usart_put(0x0A);
 			break;
 
 
@@ -205,19 +230,6 @@ void USART2_IRQHandler()
 			motor_set(3, 0);
 			motor_set(4, 0);
 			break;
-
-		case 0x03: //STATUS
-			dec2hascii((int)(pid[0].p*100), 5);
-			dec2hascii((int)(pid[0].i*100), 5);
-			dec2hascii((int)(pid[0].d*100), 5);
-			dec2hascii((int)(pid[1].p*100), 5);
-			dec2hascii((int)(pid[1].i*100), 5);
-			dec2hascii((int)(pid[1].d*100), 5);
-			dec2hascii(iPower, 5);
-			dec2hascii(ADCVal[0], 5);
-			dec2hascii(ADCVal[1], 5);
-			break;
-
 
 		case 0x0A:
 			buffer_parse();

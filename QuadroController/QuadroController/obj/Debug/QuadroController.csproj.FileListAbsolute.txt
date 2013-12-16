@@ -7,3 +7,12 @@ c:\users\ffrea_000\documents\visual studio 2013\Projects\QuadroController\Quadro
 c:\users\ffrea_000\documents\visual studio 2013\Projects\QuadroController\QuadroController\obj\Debug\QuadroController.csproj.GenerateResource.Cache
 c:\users\ffrea_000\documents\visual studio 2013\Projects\QuadroController\QuadroController\obj\Debug\QuadroController.exe
 c:\users\ffrea_000\documents\visual studio 2013\Projects\QuadroController\QuadroController\obj\Debug\QuadroController.pdb
+C:\Users\Synergia\Desktop\QuadroTwins-master\QuadroTwins-master\QuadroController\QuadroController\bin\Debug\QuadroController.exe.config
+C:\Users\Synergia\Desktop\QuadroTwins-master\QuadroTwins-master\QuadroController\QuadroController\obj\Debug\QuadroController.exe
+C:\Users\Synergia\Desktop\QuadroTwins-master\QuadroTwins-master\QuadroController\QuadroController\obj\Debug\QuadroController.pdb
+C:\Users\Synergia\Desktop\QuadroTwins-master\QuadroTwins-master\QuadroController\QuadroController\bin\Debug\QuadroController.exe
+C:\Users\Synergia\Desktop\QuadroTwins-master\QuadroTwins-master\QuadroController\QuadroController\bin\Debug\QuadroController.pdb
+C:\Users\Synergia\Desktop\QuadroTwins-master\QuadroTwins-master\QuadroController\QuadroController\obj\Debug\QuadroController.Form1.resources
+C:\Users\Synergia\Desktop\QuadroTwins-master\QuadroTwins-master\QuadroController\QuadroController\obj\Debug\QuadroController.Properties.Resources.resources
+C:\Users\Synergia\Desktop\QuadroTwins-master\QuadroTwins-master\QuadroController\QuadroController\obj\Debug\QuadroController.csproj.GenerateResource.Cache
+C:\Users\Synergia\Desktop\QuadroTwins-master\QuadroTwins-master\QuadroController\QuadroController\obj\Debug\QuadroController.csprojResolveAssemblyReference.cache

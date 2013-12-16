@@ -15,6 +15,7 @@ namespace QuadroController
 {
     public partial class Form1 : Form
     {
+        System.Text.ASCIIEncoding encoding = new System.Text.ASCIIEncoding();
         public Form1()
         {
             InitializeComponent();
@@ -35,7 +36,27 @@ namespace QuadroController
             threadADC.Abort();
         }
 
-        SerialPort sp;
+        object lockable = new object();
+        SerialPort s;
+        SerialPort sp
+        {          
+            get
+            {
+                lock (lockable)
+                {
+                    return s;
+                }
+            }
+
+            set
+            {
+                lock (lockable)
+                {
+                    s = value;
+                }
+
+            }
+        }
 
         public static string dec2hascii(int liczba, int length)
         {
@@ -105,6 +126,8 @@ namespace QuadroController
         private void button8_Click(object sender, EventArgs e)
         {
             sp.Write(new byte[] { 0x01 }, 0, 1);
+          /*  Thread.Sleep(1000);
+            sp.Write(new byte[] { 0x03 }, 0, 1);*/
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -137,8 +160,9 @@ namespace QuadroController
             }
         }
 
-        float fTime = 0.005f;
-        const float fTimeConst = 0.005f;
+        int iInterval = 100;
+        float chartTime = 0;
+        
         delegate void AddChartDelegate();
         public void AddChart()
         {
@@ -147,9 +171,10 @@ namespace QuadroController
             else
             {
                 foreach(float f in fAngles)
-                {
-                    chart1.Series[0].Points.AddXY(fTime, f);
-                    fTime += fTimeConst;
+               {
+                    chart1.Series[0].Points.AddXY(chartTime, f);
+                    label10.Text = f.ToString();
+                    chartTime += (float)iInterval / 1000;
                 }
             }
         }
@@ -182,8 +207,7 @@ namespace QuadroController
         }
 
         Thread threadADC;
-        int chartTime = 0;
-        int iInterval = 100;
+
         private void ADCScan()
         {
             while (true)
@@ -191,9 +215,9 @@ namespace QuadroController
 
                 if (GetCheckBoxSelected(checkBox1))
                 {
-                    sp.Write(new byte[] { 0xFF, 0x24, 0x01, 0x0A }, 0, 4);                
+                    sp.Write(new byte[] {0x03 }, 0, 1);                
                    
-                    chartTime += iInterval;
+
                 }
                 Thread.Sleep(iInterval);
             }
@@ -204,81 +228,86 @@ namespace QuadroController
         Thread threadParse;
         private void ParseBuffer()
         {
-            while(!buffer.StartsWith(((char)0xFF).ToString()) && buffer.Length > 0)
+            while (true)
             {
-                buffer = buffer.Substring(1);
+                while (!buffer.StartsWith(((char)0xFF).ToString()) && buffer.Length > 0)
+                {
+                    buffer = buffer.Substring(1);
+                }
+
+                while (!buffer.Contains("\n")) ;
+
+                bool update = true;
+                switch (buffer[1])
+                {
+                    case (char)0x20:
+                        state.px = (decimal)hascii2dec(buffer.Substring(2, 5)) / 100;
+                        state.ix = (decimal)hascii2dec(buffer.Substring(7, 5)) / 100;
+                        state.dx = (decimal)hascii2dec(buffer.Substring(12, 5)) / 100;
+                        break;
+
+                    case (char)0x21:
+                        state.py = (decimal)hascii2dec(buffer.Substring(2, 5)) / 100;
+                        state.iy = (decimal)hascii2dec(buffer.Substring(7, 5)) / 100;
+                        state.dy = (decimal)hascii2dec(buffer.Substring(12, 5)) / 100;
+                        break;
+
+                    case (char)0x22:
+                        state.power = hascii2dec(buffer.Substring(2, 5));
+                        break;
+                    case (char)0x23:
+                        state.ax = (decimal)hascii2dec(buffer.Substring(2, 8)) / 100;
+                        state.ay = (decimal)hascii2dec(buffer.Substring(10, 8)) / 100;
+                        state.az = (decimal)hascii2dec(buffer.Substring(18, 8)) / 100;
+                        break;
+                    case (char)0x27:
+
+                        fAngles.Clear();
+                       fAngles.Add((float)hascii2dec(buffer.Substring(2, 8)) / 100);
+                      //fAngles.Add((float)hascii2dec(buffer.Substring(10, 8)) / 100);
+                        AddChart();
+
+                        
+                        update = false;
+                        break;
+
+                    case (char)0x25:
+                        state.px = (decimal)hascii2dec(buffer.Substring(2, 5)) / 100;
+                        state.ix = (decimal)hascii2dec(buffer.Substring(7, 5)) / 100;
+                        state.dx = (decimal)hascii2dec(buffer.Substring(12, 5)) / 100;
+                        state.py = (decimal)hascii2dec(buffer.Substring(17, 5)) / 100;
+                        state.iy = (decimal)hascii2dec(buffer.Substring(22, 5)) / 100;
+                        state.dy = (decimal)hascii2dec(buffer.Substring(27, 5)) / 100;
+                        state.power = hascii2dec(buffer.Substring(32, 5));
+                        state.temp = hascii2dec(buffer.Substring(37, 5));
+                        state.lipo = hascii2dec(buffer.Substring(42, 5));
+                        state.ax = (decimal)hascii2dec(buffer.Substring(47, 8)) / 100;
+                        state.ay = (decimal)hascii2dec(buffer.Substring(55, 8)) / 100;
+                        state.az = (decimal)hascii2dec(buffer.Substring(63, 8)) / 100;
+                        break;
+
+                    case (char)0x26:
+                        state.temp = hascii2dec(buffer.Substring(2, 5));
+                        state.lipo = hascii2dec(buffer.Substring(7, 5));
+                        break;
+
+                    default:
+                        update = false;
+                        break;
+                }
+
+                if (update)
+                    FillForm();
+
+                while (!buffer.StartsWith("\n") && buffer.Length > 0)
+                {
+                    buffer = buffer.Substring(1);
+                }
+
+                if (buffer.Length > 0)
+                    buffer = buffer.Substring(1);
+
             }
-
-            while (!buffer.Contains("\n")) ;
-
-            bool update = true;
-            switch(buffer[1])
-            {
-                case (char)0x20:
-                    state.px = (decimal)hascii2dec(buffer.Substring(2, 5))/100;
-                    state.ix = (decimal)hascii2dec(buffer.Substring(7, 5)) / 100;
-                    state.dx = (decimal)hascii2dec(buffer.Substring(12, 5)) / 100;
-                    break;
-
-                case (char)0x21:
-                    state.py = (decimal)hascii2dec(buffer.Substring(2, 5)) / 100;
-                    state.iy = (decimal)hascii2dec(buffer.Substring(7, 5)) / 100;
-                    state.dy = (decimal)hascii2dec(buffer.Substring(12, 5)) / 100;
-                    break;
-
-                case (char)0x22:
-                    state.power = hascii2dec(buffer.Substring(2, 5));
-                    break;
-                case (char)0x23:
-                    state.ax= (decimal)hascii2dec(buffer.Substring(2, 5)) / 100;
-                    state.ay = (decimal)hascii2dec(buffer.Substring(7, 5)) / 100;
-                    state.az = (decimal)hascii2dec(buffer.Substring(12, 5)) / 100;
-                    break;
-                case (char)0x24:
-
-                    fAngles.Clear();
-                    int num = hascii2dec(buffer.Substring(2, 5));
-
-                    for (int i = 0; i < num; i++)
-                    {
-                        fAngles.Add((float)hascii2dec(buffer.Substring(i*5 + 7, 5)) / 100);
-
-                    }
-                    AddChart();
-                    break;
-
-                case (char)0x25:
-                    state.px = (decimal)hascii2dec(buffer.Substring(2, 5)) / 100;
-                    state.ix = (decimal)hascii2dec(buffer.Substring(7, 5)) / 100;
-                    state.dx = (decimal)hascii2dec(buffer.Substring(12, 5)) / 100;
-                    state.py = (decimal)hascii2dec(buffer.Substring(17, 5)) / 100;
-                    state.iy = (decimal)hascii2dec(buffer.Substring(22, 5)) / 100;
-                    state.dy = (decimal)hascii2dec(buffer.Substring(27, 5)) / 100;
-                    state.power = hascii2dec(buffer.Substring(32, 5));
-                     state.temp = hascii2dec(buffer.Substring(37, 5));
-                    state.lipo = hascii2dec(buffer.Substring(42, 5));
-                    break;
-
-                case (char)0x26:
-                    state.temp = hascii2dec(buffer.Substring(2, 5));
-                    state.lipo = hascii2dec(buffer.Substring(7, 5));
-                    break;
-
-                default:
-                    update = false;
-                    break;
-            }
-
-            if (update)
-                FillForm();
-
-            while (!buffer.StartsWith("\n") && buffer.Length > 0)
-            {
-                buffer = buffer.Substring(1);
-            }
-
-            if(buffer.Length > 0)
-                buffer = buffer.Substring(1);
 
         }
 
@@ -303,37 +332,37 @@ namespace QuadroController
 
         private void button5_Click(object sender, EventArgs e)
         {
-            List<char> l = new List<char>();
-            l.Add((char)0xFF);
-            l.Add((char)0x20);
-            l.AddRange(dec2hascii((int)(numericUpDown1.Value * 100), 5).ToCharArray());
-            l.AddRange(dec2hascii((int)(numericUpDown2.Value * 100), 5).ToCharArray());
-            l.AddRange(dec2hascii((int)(numericUpDown3.Value * 100), 5).ToCharArray());
-            l.Add((char)0x0A);
+            List<byte> l = new List<byte>();
+            l.Add(0xFF);
+            l.Add(0x20);
+            l.AddRange(encoding.GetBytes(dec2hascii((int)(numericUpDown1.Value * 100), 5)));
+            l.AddRange(encoding.GetBytes(dec2hascii((int)(numericUpDown2.Value * 100), 5)));
+            l.AddRange(encoding.GetBytes(dec2hascii((int)(numericUpDown3.Value * 100), 5)));
+            l.Add(0x0A);
             sp.Write(l.ToArray(), 0, l.Count);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            List<char> l = new List<char>();
-            l.Add((char)0xFF);
-            l.Add((char)0x21);
-            l.AddRange(dec2hascii((int)(numericUpDown6.Value * 100), 5).ToCharArray());
-            l.AddRange(dec2hascii((int)(numericUpDown5.Value * 100), 5).ToCharArray());
-            l.AddRange(dec2hascii((int)(numericUpDown4.Value * 100), 5).ToCharArray());
-            l.Add((char)0x0A);
+            List<byte> l = new List<byte>();
+            l.Add(0xFF);
+            l.Add(0x21);
+            l.AddRange(encoding.GetBytes(dec2hascii((int)(numericUpDown6.Value * 100), 5)));
+            l.AddRange(encoding.GetBytes(dec2hascii((int)(numericUpDown5.Value * 100), 5)));
+            l.AddRange(encoding.GetBytes(dec2hascii((int)(numericUpDown4.Value * 100), 5)));
+            l.Add(0x0A);
             sp.Write(l.ToArray(), 0, l.Count);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            List<char> l = new List<char>();
-            l.Add((char)0xFF);
-            l.Add((char)0x23);
-            l.AddRange(dec2hascii((int)(numericUpDown9.Value * 100), 5).ToCharArray());
-            l.AddRange(dec2hascii((int)(numericUpDown10.Value * 100), 5).ToCharArray());
-            l.AddRange(dec2hascii((int)(numericUpDown7.Value * 100), 5).ToCharArray());
-            l.Add((char)0x0A);
+            List<byte> l = new List<byte>();
+            l.Add(0xFF);
+            l.Add(0x23);
+            l.AddRange(encoding.GetBytes(dec2hascii((int)(numericUpDown9.Value * 100), 8)));
+            l.AddRange(encoding.GetBytes(dec2hascii((int)(numericUpDown10.Value * 100), 8)));
+            l.AddRange(encoding.GetBytes(dec2hascii((int)(numericUpDown7.Value * 100), 8)));
+            l.Add(0x0A);
             sp.Write(l.ToArray(), 0, l.Count);
         }
 
@@ -343,6 +372,8 @@ namespace QuadroController
             Series s = new Series();
             s.ChartType = SeriesChartType.Spline;
             chart1.Series.Add(s);
+           
+            chartTime = 0;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -350,16 +381,24 @@ namespace QuadroController
             Series s = new Series();
             s.ChartType = SeriesChartType.Spline;
             chart1.Series.Insert(0, s);
+            chartTime = 0;
+
         }
 
+       
         private void button10_Click(object sender, EventArgs e)
         {
-            List<char> l = new List<char>();
-            l.Add((char)0xFF);
-            l.Add((char)0x22);
-            l.AddRange(dec2hascii((int)numericUpDown8.Value, 5).ToCharArray());
-            l.Add((char)0x0A);
+            List<byte> l = new List<byte>();
+            l.Add(0xFF);
+            l.Add(0x22);
+            l.AddRange(encoding.GetBytes(dec2hascii((int)numericUpDown8.Value, 5)));
+            l.Add(0x0A);
             sp.Write(l.ToArray(), 0, l.Count);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            sp.Write(new byte[] {0xFF, 0x25, 0x0A}, 0, 3);
         }
 
       

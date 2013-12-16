@@ -1,6 +1,7 @@
 void aparature_init();
 void EXTI15_10_IRQHandler();
-
+void TIM1_UP_IRQHandler();
+void aparature_increment();
 typedef struct {
 	//! 0-170
 	int32_t throttle_up_down;

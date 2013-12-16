@@ -15,22 +15,22 @@ void sensors_init()
 	magneto.address = 28;
 
 	//accelero conf
-	i2c_write2(acc.address, 0x20, 151);
-	i2c_write2(acc.address, 0x21, 0);
-	i2c_write2(acc.address, 0x22, 8);
-	i2c_write2(acc.address, 0x23, 40);
-	i2c_write2(acc.address, 0x24, 64);
+	i2c_write2(acc.address, 0x20, 151);//ustawienie czestotliwosci
+	i2c_write2(acc.address, 0x21, 0); //filtrowanie
+	i2c_write2(acc.address, 0x22, 8); //nie wiemy czemu to samo co bit5
+	i2c_write2(acc.address, 0x23, 40); //wysoka rozdzielczoœæ +-8G
+	i2c_write2(acc.address, 0x24, 64); //FIFO
 
 	//gyro conf
-	i2c_write2(gyro.address, 0x20, 0x0F);
-	i2c_write2(gyro.address, 0x21, 0x00);
-	i2c_write2(gyro.address, 0x22, 0x00);// póki co pin Ÿle poprowadzony wiêc niepotrzebne
-	i2c_write2(gyro.address, 0x23, 0x20);
-	i2c_write2(gyro.address, 0x24, 0x00);
+	i2c_write2(gyro.address, 0x20, 0x0F);  //wszystko w³¹czone
+	i2c_write2(gyro.address, 0x21, 0x00); //filtry
+	i2c_write2(gyro.address, 0x22, 0x00);// póki co pin Ÿle poprowadzony wiêc niepotrzebne, jakiœ dziwny
+	i2c_write2(gyro.address, 0x23, 0x20); //500 dps
+	i2c_write2(gyro.address, 0x24, 0x00); //fifo, filtr
 
 	//magneto conf
-	i2c_write2(magneto.address, 0x11, 0x80);
-	i2c_write2(magneto.address, 0x10, 0x01);
+	i2c_write2(magneto.address, 0x11, 0x80); //automatic reset
+	i2c_write2(magneto.address, 0x10, 0x01); //active mode
 }
 
 int error_check()
@@ -52,7 +52,7 @@ void i2c_config()
 	I2C2->CR1 &= ~I2C_CR1_SWRST;
 
 	I2C2->TRISE = 37;               // limit slope
-	I2C2->CCR = 160;               // setup speed (100kHz)
+	I2C2->CCR = 30;               // setup speed (100kHz)
 	I2C2->CR2 |= 36;      // config I2C2 module
 
 	I2C2->CR1 |= I2C_CR1_PE;// enable peripheral
@@ -76,12 +76,12 @@ void sensors_read()
 	gyro.z |= (i2c_read2(gyro.address, 0x2C)&0xFF);
 
 
-	magneto.x = (i2c_read2(magneto.address, 0x01)&0xFF) << 8;
+/*	magneto.x = (i2c_read2(magneto.address, 0x01)&0xFF) << 8;
 	magneto.x |= (i2c_read2(magneto.address, 0x02)&0xFF);
 	magneto.y = (i2c_read2(magneto.address, 0x03)&0xFF) << 8;
 	magneto.y |= (i2c_read2(magneto.address, 0x04)&0xFF);
 	magneto.z = (i2c_read2(magneto.address, 0x05)&0xFF) << 8;
-	magneto.z |= (i2c_read2(magneto.address, 0x06)&0xFF);
+	magneto.z |= (i2c_read2(magneto.address, 0x06)&0xFF);*/
 
 }
 

@@ -1,8 +1,8 @@
 #ifndef motors
 #define motors
 
-#define iMotorMax 1500
-#define iMotorMin 300
+#define iMotorMax 1000 //2815
+#define iMotorMin 100
 
 void motors_init();
 void motor_set(int i, int val);

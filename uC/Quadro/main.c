@@ -40,13 +40,7 @@ int main(void)
 
 	while(1)
 	{
-		if(!BTN)
-		{
-			motor_set(1, 300);
-			motor_set(2, 300);
-			motor_set(3, 300);
-			motor_set(4, 300);
-		}
+		regulation_loop();
 	}
 }
 

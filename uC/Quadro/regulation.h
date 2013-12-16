@@ -1,5 +1,4 @@
 void regulation_init();
-void TIM1_UP_IRQHandler();
 
 typedef struct {
 
@@ -23,8 +22,10 @@ typedef struct {
 Axis curr_angle;
 Axis dest_angle;
 extern int iPower;
-extern Axis fAngles[500];
-extern int fAnglesPos;
+extern uint8_t armed;
+extern float filterAngle[3];
 Axis getCurrentAngle(float dt);
 float comp_filter(float newAngle, float newRate, float dt, int i);
-void PID_Calc();
+void PID_Calc(float dt);
+void regulation_loop();
+extern int temp;

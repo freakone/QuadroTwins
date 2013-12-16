@@ -4,56 +4,15 @@
 <window>
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar/>
-<page focus="true" label="Workspace - CooCox CoBuilder">
+<page aggregateWorkingSetId="Aggregate for window 1376912904060" focus="true" label="Workspace - CooCox CoBuilder">
 <editors>
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="5"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="6"/>
-<part id="7"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="usart.c" partName="usart.c" path="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/usart.c" title="usart.c" tooltip="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/usart.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/usart.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2646" selectionTopPixel="2001"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="regulation.c" partName="regulation.c" path="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/regulation.c" title="regulation.c" tooltip="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/regulation.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/regulation.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="627" selectionTopPixel="717"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/main.c" title="main.c" tooltip="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/main.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="20" selectionOffset="834" selectionTopPixel="727"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="motors.c" partName="motors.c" path="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/motors.c" title="motors.c" tooltip="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/motors.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/motors.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="42" selectionOffset="494" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="motors.h" partName="motors.h" path="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/motors.h" title="motors.h" tooltip="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/motors.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/motors.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="77" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="regulation.h" partName="regulation.h" path="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/regulation.h" title="regulation.h" tooltip="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/regulation.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/regulation.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="474" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="sensors.c" partName="sensors.c" path="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/sensors.c" title="sensors.c" tooltip="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/sensors.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/sensors.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="17" selectionOffset="1069" selectionTopPixel="540"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="sensors.h" partName="sensors.h" path="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/sensors.h" title="sensors.h" tooltip="C:/Users/ffrea_000/Desktop/GitHub/QuadroTwins/uC/Quadro/sensors.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Quadro/sensors.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="357" selectionTopPixel="0"/>
-</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
@@ -63,11 +22,9 @@
 <viewState CommonNavigator.LINKING_ENABLED="1" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
 <expanded>
 <element path="/Quadro"/>
-<element path="/Quadro/cmsis_boot"/>
-<element path="/Quadro/cmsis_boot/startup"/>
 </expanded>
 <selection>
-<element path="/Quadro/usart.c"/>
+<element path="/Quadro/main.c"/>
 </selection>
 </viewState>
 </view>
@@ -76,8 +33,8 @@
 </view>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
-<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 <view IMemento.internal.id="org.eclipse.cdt.ui.pdomSearchViewPage" definitionColumnWidth="150" locationColumnWidth="300" matchColumnWidth="300" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" showEnclosingDefinitions="true"/>
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 </viewState>
 </view>
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug">
@@ -87,7 +44,7 @@
 <viewState/>
 </view>
 <view id="org.coocox.coassistant.view.CoAssistantView_debug" partName="Peripherals">
-<viewState horizontalPosition="0" verticalPosition="0">
+<viewState horizontalPosition="0" verticalPosition="4">
 <selection>&#x0A;<element name="TIM4"/>
 </selection>
 <registerValues baseAddress="Base Address: 0x40000800" description="Description:  TIM4 registers"/>
@@ -97,7 +54,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="org.coocox.builder.perspective.CoBuilder">
+<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="org.coocox.builder.perspective.CoBuilder">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.coocox.builder.ui.PerspectiveCoBuilder" id="org.coocox.builder.perspective.CoBuilder" label="CooCox CoBuilder"/>
 <alwaysOnActionSet id="org.coocox.component.ui.actionSet"/>
@@ -143,7 +100,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1b7ad0" ratio="0.25" ratioLeft="478" ratioRight="1434" relationship="2" relative="org.eclipse.ui.internal.ViewStack@13962d">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1b7ad0" ratio="0.25248823" ratioLeft="482" ratioRight="1427" relationship="2" relative="org.eclipse.ui.internal.ViewStack@13962d">
 <folder appearance="2" expanded="2">
 <page content="org.coocox.component.ui.ComponentView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
@@ -229,8 +186,8 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.coocox.builder.ui.build"/>
 <hide_toolbar_item_id id="org.coocox.welcome.ui.action.welcome"/>
-<hide_toolbar_item_id id="org.coocox.component.ui.ShowRepositoryAction"/>
 <hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
+<hide_toolbar_item_id id="org.coocox.component.ui.ShowRepositoryAction"/>
 <view id="org.eclipse.debug.ui.VariableView"/>
 <view id="org.eclipse.search.ui.views.SearchView"/>
 <view id="org.coocox.codebugger.trace.ui.traceview"/>
@@ -284,220 +241,58 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/regulation.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/regulation.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/usart.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/sensors.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/sensors.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/main.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/motors.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/motors.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Quadro/regulation.c"/>
-</editors>
-<item historyLabel="regulation.c" index="0">
-<position info="not_deleted" x="2381" y="65"/>
-</item>
-<item historyLabel="regulation.h" index="1">
-<position info="not_deleted" x="474" y="0"/>
-</item>
-<item historyLabel="regulation.c" index="0">
-<position info="not_deleted" x="2381" y="65"/>
-</item>
-<item historyLabel="regulation.h" index="1">
-<position info="not_deleted" x="474" y="0"/>
-</item>
-<item historyLabel="regulation.c" index="0">
-<position info="not_deleted" x="650" y="24"/>
-</item>
-<item historyLabel="regulation.h" index="1">
-<position info="not_deleted" x="474" y="0"/>
-</item>
-<item historyLabel="regulation.c" index="0">
-<position info="not_deleted" x="197" y="0"/>
-</item>
-<item historyLabel="regulation.h" index="1">
-<position info="not_deleted" x="474" y="0"/>
-</item>
-<item historyLabel="regulation.c" index="0">
-<position info="not_deleted" x="572" y="19"/>
-</item>
-<item historyLabel="sensors.c" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="sensors.h" index="4">
-<position info="not_deleted" x="20" y="0"/>
-</item>
-<item historyLabel="sensors.c" index="3">
-<position info="not_deleted" x="1388" y="19"/>
-</item>
-<item historyLabel="sensors.h" index="4">
-<position info="not_deleted" x="357" y="0"/>
-</item>
-<item historyLabel="sensors.c" index="3">
-<position info="not_deleted" x="3380" y="51"/>
-</item>
-<item historyLabel="sensors.h" index="4">
-<position info="not_deleted" x="357" y="0"/>
-</item>
-<item historyLabel="sensors.c" index="3">
-<position info="not_deleted" x="3517" y="78"/>
-</item>
-<item historyLabel="sensors.h" index="4">
-<position info="not_deleted" x="357" y="0"/>
-</item>
-<item historyLabel="sensors.c" index="3">
-<position info="not_deleted" x="2519" y="63"/>
-</item>
-<item historyLabel="sensors.h" index="4">
-<position info="not_deleted" x="357" y="0"/>
-</item>
-<item historyLabel="sensors.c" index="3">
-<position info="not_deleted" x="2387" y="59"/>
-</item>
-<item historyLabel="sensors.h" index="4">
-<position info="not_deleted" x="357" y="0"/>
-</item>
-<item historyLabel="sensors.c" index="3">
-<position info="not_deleted" x="2387" y="59"/>
-</item>
-<item historyLabel="sensors.h" index="4">
-<position info="not_deleted" x="746" y="0"/>
-</item>
-<item historyLabel="sensors.c" index="3">
-<position info="not_deleted" x="817" y="0"/>
-</item>
-<item historyLabel="regulation.c" index="0">
-<position info="not_deleted" x="793" y="15"/>
-</item>
-<item historyLabel="regulation.h" index="1">
-<position info="not_deleted" x="474" y="0"/>
-</item>
-<item historyLabel="regulation.c" index="0">
-<position info="not_deleted" x="2491" y="0"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="331" y="17"/>
-</item>
-<item historyLabel="main.h" index="6">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="331" y="17"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="834" y="20"/>
-</item>
-<item historyLabel="usart.c" index="2">
-<position info="not_deleted" x="591" y="0"/>
-</item>
-<item historyLabel="usart.c" index="2">
-<position info="not_deleted" x="4370" y="0"/>
-</item>
-<item historyLabel="usart.c" index="2">
-<position info="not_deleted" x="4396" y="0"/>
-</item>
-<item historyLabel="usart.c" index="2">
-<position info="not_deleted" x="2062" y="34"/>
-</item>
-<item historyLabel="usart.c" index="2">
-<position info="not_deleted" x="938" y="0"/>
-</item>
-<item historyLabel="usart.c" index="2">
-<position info="not_deleted" x="4344" y="30"/>
-</item>
-<item historyLabel="usart.c" index="2">
-<position info="not_deleted" x="99" y="0"/>
-</item>
-<item historyLabel="usart.c" index="2">
-<position info="not_deleted" x="3960" y="0"/>
-</item>
-<item historyLabel="motors.c" index="7">
-<position info="not_deleted" x="494" y="42"/>
-</item>
-<item historyLabel="motors.h" index="8">
-<position info="not_deleted" x="77" y="0"/>
-</item>
-<item historyLabel="sensors.h" index="4">
-<position info="not_deleted" x="130" y="81"/>
-</item>
-<item historyLabel="sensors.c" index="3">
-<position info="not_deleted" x="35" y="22"/>
-</item>
-<item historyLabel="sensors.c" index="3">
-<position info="not_deleted" x="3455" y="39"/>
-</item>
-<item historyLabel="sensors.c" index="3">
-<position info="not_deleted" x="1069" y="17"/>
-</item>
-<item historyLabel="sensors.h" index="4">
-<position info="not_deleted" x="357" y="0"/>
-</item>
-<item historyLabel="usart.c" index="2">
-<position info="not_deleted" x="707" y="54"/>
-</item>
-<item historyLabel="usart.c" index="2">
-<position info="not_deleted" x="571" y="17"/>
-</item>
-<item historyLabel="regulation.c" index="9">
-<position info="not_deleted" x="627" y="0"/>
-</item>
-<item active="true" historyLabel="usart.c" index="2">
-<position info="not_deleted" x="4175" y="0"/>
-</item>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="Quadro/main.h">
-<persistable path="/Quadro/main.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="sensors.h" tooltip="Quadro/sensors.h">
-<persistable path="/Quadro/sensors.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="sensors.c" tooltip="Quadro/sensors.c">
-<persistable path="/Quadro/sensors.c"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="Quadro/main.c">
 <persistable path="/Quadro/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="regulation.c" tooltip="Quadro/regulation.c">
-<persistable path="/Quadro/regulation.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usart.c" tooltip="Quadro/usart.c">
-<persistable path="/Quadro/usart.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f10x_md.c" tooltip="Quadro/cmsis_boot/startup/startup_stm32f10x_md.c">
-<persistable path="/Quadro/cmsis_boot/startup/startup_stm32f10x_md.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="leds.c" tooltip="Quadro/leds.c">
 <persistable path="/Quadro/leds.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="aparature.c" tooltip="Quadro/aparature.c">
-<persistable path="/Quadro/aparature.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_rcc.h" tooltip="HUB RBC/stm_lib/inc/stm32f10x_rcc.h">
+<persistable path="/HUB RBC/stm_lib/inc/stm32f10x_rcc.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="aparature.h" tooltip="Quadro/aparature.h">
-<persistable path="/Quadro/aparature.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="HUB RBC/main.h">
+<persistable path="/HUB RBC/main.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="regulation.h" tooltip="Quadro/regulation.h">
-<persistable path="/Quadro/regulation.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="rbc4242r2r.h" tooltip="HUB RBC/rbc4242r2r.h">
+<persistable path="/HUB RBC/rbc4242r2r.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usart.h" tooltip="Quadro/usart.h">
-<persistable path="/Quadro/usart.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x.h" tooltip="HUB RBC/stm32f10x.h">
+<persistable path="/HUB RBC/stm32f10x.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x.h" tooltip="Quadro/cmsis_boot/stm32f10x.h">
-<persistable path="/Quadro/cmsis_boot/stm32f10x.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="HUB RBC/main.c">
+<persistable path="/HUB RBC/main.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_conf.h" tooltip="Quadro/cmsis_boot/stm32f10x_conf.h">
-<persistable path="/Quadro/cmsis_boot/stm32f10x_conf.h"/>
+<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
+<persistable>&#x0A;<subPage/>
+</persistable>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f10x.h" tooltip="Quadro/cmsis_boot/system_stm32f10x.h">
-<persistable path="/Quadro/cmsis_boot/system_stm32f10x.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_conf.h" tooltip="HUB RBC/cmsis_boot/stm32f10x_conf.h">
+<persistable path="/HUB RBC/cmsis_boot/stm32f10x_conf.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f10x_md.c" tooltip="Quadro/cmsis_boot/startup/startup_stm32f10x_md.c">
+<persistable path="/Quadro/cmsis_boot/startup/startup_stm32f10x_md.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="buzzer.c" tooltip="Quadro/buzzer.c">
+<persistable path="/Quadro/buzzer.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="sensors.h" tooltip="Quadro/sensors.h">
+<persistable path="/Quadro/sensors.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_it.c" tooltip="HUB RBC/stm32f10x_it.c">
+<persistable path="/HUB RBC/stm32f10x_it.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_it.h" tooltip="HUB RBC/stm32f10x_it.h">
+<persistable path="/HUB RBC/stm32f10x_it.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f10x.c" tooltip="HUB RBC/system_stm32f10x.c">
+<persistable path="/HUB RBC/system_stm32f10x.c"/>
 </file>
 </mruList>
 </workbench>

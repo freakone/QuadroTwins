@@ -2,14 +2,16 @@
 #include "sensors.h"
 #include "regulation.h"
 #include "lipo.h"
+#include "aparature.h"
 
 void usart_init()
 {
-	NVIC_SetPriority(USART2_IRQn, 26);
+
 	USART2->BRR = 36000000 / 115200;
 	USART2->CR1 = USART_CR1_UE | USART_CR1_TE | USART_CR1_RE | USART_CR1_RXNEIE;
 
 	NVIC_EnableIRQ(USART2_IRQn);
+
 
 }
 
@@ -35,10 +37,9 @@ void usart_puti(int i)
 	usart_puts(s);
 }
 
+void dec2hascii(int32_t liczba, uint8_t length){
 
-void dec2hascii(uint32_t liczba, uint8_t length){
-
-	uint32_t buffer;
+	/*int32_t buffer;
 	int i;
 	for (i=length;i > 0;i--)
 	{
@@ -48,7 +49,16 @@ void dec2hascii(uint32_t liczba, uint8_t length){
 		else if (buffer>=10 && buffer<=15)
 			usart_put((uint8_t)buffer+55);
 
-	}
+	}*/
+
+	uint8_t buff[20];
+	int i;
+	int l = sprintf(buff, "%X", liczba);
+	if(l < length)
+		for(i = 0; i < length - l; i++)
+			usart_put('0');
+
+		usart_puts(buff);
 
 }
 
@@ -88,10 +98,10 @@ void readbuff(int8_t *p, int8_t *buff, int8_t len, int8_t start)
 
 void buffer_parse()
 {
-	int8_t temp[5];
+	int8_t temp[8];
 	int i;
 
-	if(buffer[0] == 0xFF && buffer_pos > 2)
+	if(buffer[0] == 0xFF)
 	{
 		switch(buffer[1])
 		{
@@ -139,44 +149,19 @@ void buffer_parse()
 			break;
 
 		case 0x23: //set angle
-			readbuff(temp, buffer, 5, 2);
-			dest_angle.x = ((float)hascii2dec(temp, 5)/100);
-			readbuff(temp, buffer, 5, 7);
-			dest_angle.y = ((float)hascii2dec(temp, 5)/100);
-			readbuff(temp, buffer, 5, 12);
-			dest_angle.z = ((float)hascii2dec(temp, 5)/100);
+			readbuff(temp, buffer, 8, 2);
+			dest_angle.x = ((float)hascii2dec(temp, 8)/100);
+			readbuff(temp, buffer, 8, 10);
+			dest_angle.y = ((float)hascii2dec(temp, 8)/100);
+			readbuff(temp, buffer, 8, 18);
+			dest_angle.z = ((float)hascii2dec(temp, 8)/100);
 
 			usart_put(0xFF);
 			usart_put(0x23);
-			dec2hascii((int)(dest_angle.x*100), 5);
-			dec2hascii((int)(dest_angle.y*100), 5);
-			dec2hascii((int)(dest_angle.z*100), 5);
+			dec2hascii((int)(dest_angle.x*100), 8);
+			dec2hascii((int)(dest_angle.y*100), 8);
+			dec2hascii((int)(dest_angle.z*100), 8);
 			usart_put(0x0A);
-			break;
-
-
-		case 0x24: //czytaj k¹ty
-
-			usart_put(0xFF);
-			usart_put(0x24);
-			dec2hascii(fAnglesPos, 5);
-
-			switch(buffer[2])
-			{
-			case 0x01:
-				for(i = 0; i < fAnglesPos; i++)
-					dec2hascii((int)(fAngles[i].x*100), 5);
-			case 0x02:
-				for(i = 0; i < fAnglesPos; i++)
-					dec2hascii((int)(fAngles[i].y*100), 5);
-			case 0x03:
-				for(i = 0; i < fAnglesPos; i++)
-					dec2hascii((int)(fAngles[i].z*100), 5);
-			}
-
-			fAnglesPos = 0;
-			usart_put(0x0A);
-
 			break;
 
 		case 0x25:
@@ -192,6 +177,9 @@ void buffer_parse()
 			dec2hascii(iPower, 5);
 			dec2hascii(ADCVal[0], 5);
 			dec2hascii(ADCVal[1], 5);
+			dec2hascii((int)(dest_angle.x*100), 8);
+			dec2hascii((int)(dest_angle.y*100), 8);
+			dec2hascii((int)(dest_angle.z*100), 8);
 			usart_put(0x0A);
 			break;
 
@@ -212,25 +200,51 @@ void buffer_parse()
 	buffer_pos = 0;
 }
 
+
 void USART2_IRQHandler()
 {
+
 	if(USART2->SR & USART_SR_RXNE)
 	{
 		uint8_t data = USART2->DR;
+
 		switch(data)
 		{
 		case 0x01: // STARt
-			TIM1->CR1 |= TIM_CR1_CEN;
+			armed = 0xFF;
+			temp = 0;
 			break;
 
 		case 0x02: //STOP
-			TIM1->CR1 &= ~TIM_CR1_CEN;
+			armed = 0;
+			curr_angle.x = 0;
+			curr_angle.y = 0;
+			curr_angle.z = 0;
+			pid[0].last_error = 0;
+			pid[0].sum_error = 0;
+			pid[1].last_error = 0;
+			pid[1].sum_error = 0;
 			motor_set(1, 0);
 			motor_set(2, 0);
 			motor_set(3, 0);
 			motor_set(4, 0);
 			break;
 
+		case 0x03: //czytaj k¹t
+
+			usart_put(0xFF);
+			usart_put(0x27);
+
+			dec2hascii((int)(curr_angle.x*100), 8);
+			dec2hascii((int)(curr_angle.y*100), 8);
+			usart_put(0x0A);
+
+			break;
+
+		case 0x04:
+			dec2hascii(pilot.throttle_up_down, 8);
+			usart_put(0x0A);
+			break;
 		case 0x0A:
 			buffer_parse();
 			break;

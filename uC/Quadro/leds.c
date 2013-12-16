@@ -1,5 +1,6 @@
 #include "cmsis_boot/stm32f10x.h"
 #include "hdr_bitband.h"
+#include "aparature.h"
 
 #define L1 GPIOA->ODR ^= GPIO_ODR_ODR1;
 #define L2 GPIOB->ODR ^= GPIO_ODR_ODR12;
@@ -14,7 +15,7 @@ void leds_init()
 	TIM2->DIER = TIM_DIER_UIE;
 	TIM2->CR1 = TIM_CR1_CEN;
 
-	NVIC_EnableIRQ(TIM2_IRQn); // Enable interrupt from TIM3 (NVIC level)
+	NVIC_EnableIRQ(TIM2_IRQn); // Enable interrupt from TIM2 (NVIC level)
 	//L2;
 	//L4;
 
